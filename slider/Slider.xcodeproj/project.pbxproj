@@ -27,6 +27,7 @@
 		300B1C5717F7DE2D004AB715 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 300B1C5617F7DE2D004AB715 /* Tile.m */; };
 		300B1C5A17F7E53F004AB715 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 300B1C5917F7E53F004AB715 /* Board.m */; };
 		309F9D07181FAC6900FFDBAA /* grey72x43.png in Resources */ = {isa = PBXBuildFile; fileRef = 309F9D06181FAC6900FFDBAA /* grey72x43.png */; };
+		30B330631825E5B000E727B6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B330621825E5B000E727B6 /* MenuViewController.m */; };
 		30B390FF181F96780049E370 /* blue60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B390FE181F96780049E370 /* blue60x60.png */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,8 @@
 		300B1C5817F7E53F004AB715 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		300B1C5917F7E53F004AB715 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		309F9D06181FAC6900FFDBAA /* grey72x43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey72x43.png; sourceTree = SOURCE_ROOT; };
+		30B330611825E5B000E727B6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		30B330621825E5B000E727B6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		30B390FE181F96780049E370 /* blue60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue60x60.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,8 @@
 				300B1C5917F7E53F004AB715 /* Board.m */,
 				300B1C1F17F68298004AB715 /* SliderAppDelegate.m */,
 				300B1C2717F68298004AB715 /* MainStoryboard_iPhone.storyboard */,
+				30B330611825E5B000E727B6 /* MenuViewController.h */,
+				30B330621825E5B000E727B6 /* MenuViewController.m */,
 				309F9D06181FAC6900FFDBAA /* grey72x43.png */,
 				30B390FE181F96780049E370 /* blue60x60.png */,
 				300B1C2A17F68298004AB715 /* MainStoryboard_iPad.storyboard */,
@@ -294,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				300B1C1C17F68298004AB715 /* main.m in Sources */,
+				30B330631825E5B000E727B6 /* MenuViewController.m in Sources */,
 				300B1C2017F68298004AB715 /* SliderAppDelegate.m in Sources */,
 				300B1C2F17F68298004AB715 /* SliderViewController.m in Sources */,
 				300B1C5717F7DE2D004AB715 /* Tile.m in Sources */,

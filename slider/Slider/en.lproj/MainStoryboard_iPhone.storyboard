@@ -6,16 +6,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--Slider View Controller - Slider15-->
+        <!--Slider View Controller - Slider 1-->
         <scene sceneID="5">
             <objects>
-                <viewController title="Slider15" id="2" customClass="SliderViewController" sceneMemberID="viewController">
+                <viewController title="Slider 1" id="2" customClass="SliderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-yb-Y7f">
-                                <rect key="frame" x="23" y="20" width="70" height="44"/>
+                                <rect key="frame" x="20" y="20" width="70" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="XZp-SN-fvQ"/>
@@ -30,15 +30,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backMenu:" destination="2" eventType="touchUpInside" id="XJS-Zn-Ejw"/>
-                                    <segue destination="Bcf-b8-Rbe" kind="modal" animates="NO" id="vFf-nd-nU4"/>
+                                    <segue destination="HYt-Pz-7Rg" kind="unwind" unwindAction="unwindToMenuViewController:" id="kSF-0H-EH7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTD-FV-oQj">
                                 <rect key="frame" x="232" y="20" width="68" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="5H5-Xw-ANW"/>
+                                    <constraint firstAttribute="width" constant="68" id="prP-Bc-TcZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Reset" backgroundImage="grey72x43.png">
@@ -49,7 +48,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetBoard:" destination="2" eventType="touchUpInside" id="0ck-qw-WbQ"/>
+                                    <action selector="resetBoard:" destination="2" eventType="touchUpInside" id="py7-zc-byT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3F-6I-xMh">
@@ -60,14 +59,14 @@
                                     <constraint firstAttribute="height" constant="60" id="QWk-Lg-4f5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="0" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="MzC-9Z-7Dx"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="jA7-WK-1d1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-sY-Ddw">
@@ -77,7 +76,7 @@
                                     <constraint firstAttribute="width" constant="60" id="YhH-LT-M7U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="1" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -85,7 +84,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ABF-MM-0yv"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="iGR-wC-qwe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypr-2w-riV">
@@ -95,7 +94,7 @@
                                     <constraint firstAttribute="width" constant="60" id="acZ-eX-2CU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="2" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -103,7 +102,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="WV7-jh-nC2"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="LaO-dt-RLW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xi-XC-QIH">
@@ -113,7 +112,7 @@
                                     <constraint firstAttribute="width" constant="60" id="0vU-dv-IcT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="3" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -121,7 +120,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="abJ-6w-U9m"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="JDe-66-6Kb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiq-V1-JBS">
@@ -131,7 +130,7 @@
                                     <constraint firstAttribute="height" constant="60" id="fJe-nq-ZYA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="4" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -139,14 +138,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Gcr-VJ-PRF"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="1EE-Iw-xge"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKE-sj-Ysr">
-                                <rect key="frame" x="96" y="332" width="60" height="60"/>
+                                <rect key="frame" x="96" y="332" width="56" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="7U9-2D-Mmb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="5" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -154,14 +156,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Ei6-Pi-49T"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="eXq-9R-puK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IV-Lj-p9z">
-                                <rect key="frame" x="164" y="332" width="60" height="60"/>
+                                <rect key="frame" x="160" y="332" width="64" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="6" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -169,14 +171,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="d23-KS-rwh"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ch6-Gw-fsh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-UP-HtI">
                                 <rect key="frame" x="232" y="332" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="7" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -184,7 +186,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Tgq-nD-CEe"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="gX4-bL-UY2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxG-bv-BEJ">
@@ -194,7 +196,7 @@
                                     <constraint firstAttribute="height" constant="60" id="3FF-kH-2ck"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="8" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -202,14 +204,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Irh-VB-mBh"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="lkf-9b-4cU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42B-ji-mfU">
-                                <rect key="frame" x="96" y="400" width="60" height="60"/>
+                                <rect key="frame" x="96" y="400" width="56" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="9" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -217,14 +219,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="xDX-4P-xM6"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="aHb-7B-Qsm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBN-yK-DeJ">
-                                <rect key="frame" x="164" y="400" width="60" height="60"/>
+                                <rect key="frame" x="160" y="400" width="64" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="10" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -232,14 +234,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="nAg-y0-7fl"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="aRA-p8-wIn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ0-O7-4eh">
                                 <rect key="frame" x="232" y="400" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="11" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -247,7 +249,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="YU7-Uy-Jcr"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ZFh-iZ-7sa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfw-LR-f3A">
@@ -257,7 +259,7 @@
                                     <constraint firstAttribute="height" constant="60" id="JYk-iG-YWN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="12" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -265,14 +267,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="koY-sz-sH0"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="BLX-Yg-zoO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-AV-Kyt">
-                                <rect key="frame" x="96" y="468" width="60" height="60"/>
+                                <rect key="frame" x="96" y="468" width="56" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="13" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -280,14 +282,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="dxd-GR-UD9"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="wap-b0-Ggg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnj-HO-LSg">
-                                <rect key="frame" x="164" y="468" width="60" height="60"/>
+                                <rect key="frame" x="160" y="468" width="64" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="14" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -295,14 +297,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ucz-nB-nrD"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="6Wh-75-6Zb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-jn-MvU">
                                 <rect key="frame" x="232" y="468" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" backgroundImage="blue60x60.png">
+                                <state key="normal" title="15" backgroundImage="blue60x60.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -310,7 +312,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="UcK-BK-4WS"/>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="glf-HL-jm6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -319,7 +321,6 @@
                         <constraints>
                             <constraint firstItem="cEm-jn-MvU" firstAttribute="top" secondItem="UJ0-O7-4eh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5BC-NZ-ml7"/>
                             <constraint firstItem="0IV-Lj-p9z" firstAttribute="baseline" secondItem="NFt-UP-HtI" secondAttribute="baseline" type="default" id="7Dq-3s-XNq"/>
-                            <constraint firstItem="GgN-sY-Ddw" firstAttribute="baseline" secondItem="W3F-6I-xMh" secondAttribute="baseline" type="default" id="7iD-9z-k00"/>
                             <constraint firstItem="GgN-sY-Ddw" firstAttribute="leading" secondItem="W3F-6I-xMh" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="9bp-DF-TDk"/>
                             <constraint firstItem="2xi-XC-QIH" firstAttribute="baseline" secondItem="ypr-2w-riV" secondAttribute="baseline" type="default" id="CHp-Of-eQT"/>
                             <constraint firstItem="PBN-yK-DeJ" firstAttribute="leading" secondItem="42B-ji-mfU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Cdv-DT-z9x"/>
@@ -327,15 +328,17 @@
                             <constraint firstItem="42B-ji-mfU" firstAttribute="top" secondItem="fKE-sj-Ysr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FLO-gL-RW9"/>
                             <constraint firstItem="Pig-AV-Kyt" firstAttribute="top" secondItem="42B-ji-mfU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Fue-xa-hKE"/>
                             <constraint firstItem="42B-ji-mfU" firstAttribute="baseline" secondItem="PBN-yK-DeJ" secondAttribute="baseline" type="default" id="GXB-Ma-7Qf"/>
+                            <constraint firstItem="fKE-sj-Ysr" firstAttribute="leading" secondItem="GgN-sY-Ddw" secondAttribute="leading" type="default" id="Gay-7z-SSa"/>
                             <constraint firstItem="PBN-yK-DeJ" firstAttribute="top" secondItem="0IV-Lj-p9z" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MXX-SN-fen"/>
                             <constraint firstItem="dnj-HO-LSg" firstAttribute="bottom" secondItem="Pig-AV-Kyt" secondAttribute="bottom" type="default" id="Mmh-wH-Lmp"/>
                             <constraint firstItem="cEm-jn-MvU" firstAttribute="leading" secondItem="dnj-HO-LSg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="N04-9M-wIx"/>
                             <constraint firstItem="Pig-AV-Kyt" firstAttribute="leading" secondItem="Wfw-LR-f3A" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Nno-Le-YsI"/>
                             <constraint firstItem="Xiq-V1-JBS" firstAttribute="top" secondItem="W3F-6I-xMh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OQp-83-ob0"/>
-                            <constraint firstItem="42B-ji-mfU" firstAttribute="leading" secondItem="fKE-sj-Ysr" secondAttribute="leading" type="default" id="OQz-c2-u36"/>
+                            <constraint firstItem="NFt-UP-HtI" firstAttribute="leading" secondItem="2xi-XC-QIH" secondAttribute="leading" type="default" id="OdP-SM-XJp"/>
                             <constraint firstItem="fKE-sj-Ysr" firstAttribute="top" secondItem="GgN-sY-Ddw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RHD-QL-jPv"/>
                             <constraint firstItem="dnj-HO-LSg" firstAttribute="top" secondItem="PBN-yK-DeJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SKl-0a-A2M"/>
                             <constraint firstItem="cEm-jn-MvU" firstAttribute="trailing" secondItem="UJ0-O7-4eh" secondAttribute="trailing" type="default" id="So2-OF-9ep"/>
+                            <constraint firstItem="f5e-yb-Y7f" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ssc-dS-o5q"/>
                             <constraint firstItem="f5e-yb-Y7f" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="TUt-NL-cls"/>
                             <constraint firstItem="NFt-UP-HtI" firstAttribute="leading" secondItem="0IV-Lj-p9z" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="VXa-nz-BDX"/>
                             <constraint firstItem="Wfw-LR-f3A" firstAttribute="leading" secondItem="xxG-bv-BEJ" secondAttribute="leading" type="default" id="Vdx-yk-iCc"/>
@@ -345,13 +348,11 @@
                             <constraint firstItem="dTD-FV-oQj" firstAttribute="bottom" secondItem="f5e-yb-Y7f" secondAttribute="bottom" type="default" id="XHJ-VF-O4W"/>
                             <constraint firstItem="GgN-sY-Ddw" firstAttribute="top" secondItem="W3F-6I-xMh" secondAttribute="top" type="default" id="XVU-GG-QJ2"/>
                             <constraint firstItem="Xiq-V1-JBS" firstAttribute="baseline" secondItem="fKE-sj-Ysr" secondAttribute="baseline" type="default" id="XyI-AL-qyr"/>
-                            <constraint firstItem="fKE-sj-Ysr" firstAttribute="leading" secondItem="GgN-sY-Ddw" secondAttribute="leading" type="default" id="YnT-G3-0iv"/>
                             <constraint firstItem="cEm-jn-MvU" firstAttribute="leading" secondItem="UJ0-O7-4eh" secondAttribute="leading" type="default" id="ZIJ-Cw-yEE"/>
                             <constraint firstItem="UJ0-O7-4eh" firstAttribute="leading" secondItem="NFt-UP-HtI" secondAttribute="leading" type="default" id="a3h-JG-ryy"/>
                             <constraint firstItem="Pig-AV-Kyt" firstAttribute="bottom" secondItem="Wfw-LR-f3A" secondAttribute="bottom" type="default" id="bam-MR-DVV"/>
                             <constraint firstItem="xxG-bv-BEJ" firstAttribute="top" secondItem="Xiq-V1-JBS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bc2-Zl-E36"/>
                             <constraint firstItem="UJ0-O7-4eh" firstAttribute="trailing" secondItem="NFt-UP-HtI" secondAttribute="trailing" type="default" id="cWX-et-AMN"/>
-                            <constraint firstItem="NFt-UP-HtI" firstAttribute="leading" secondItem="2xi-XC-QIH" secondAttribute="leading" type="default" id="f4O-Cx-jCo"/>
                             <constraint firstItem="NFt-UP-HtI" firstAttribute="trailing" secondItem="2xi-XC-QIH" secondAttribute="trailing" type="default" id="g33-rT-4US"/>
                             <constraint firstItem="UJ0-O7-4eh" firstAttribute="baseline" secondItem="PBN-yK-DeJ" secondAttribute="baseline" type="default" id="gQ0-I2-zgk"/>
                             <constraint firstItem="42B-ji-mfU" firstAttribute="leading" secondItem="xxG-bv-BEJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="gcQ-fK-7P4"/>
@@ -363,18 +364,18 @@
                             <constraint firstItem="xxG-bv-BEJ" firstAttribute="leading" secondItem="Xiq-V1-JBS" secondAttribute="leading" type="default" id="kTC-J4-uQK"/>
                             <constraint firstItem="0IV-Lj-p9z" firstAttribute="leading" secondItem="fKE-sj-Ysr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ktK-TG-67d"/>
                             <constraint firstItem="ypr-2w-riV" firstAttribute="leading" secondItem="GgN-sY-Ddw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="m92-K2-fB5"/>
-                            <constraint firstItem="0IV-Lj-p9z" firstAttribute="leading" secondItem="ypr-2w-riV" secondAttribute="leading" type="default" id="nhf-0n-MEv"/>
                             <constraint firstAttribute="trailing" secondItem="dTD-FV-oQj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="odN-Rt-cVH"/>
                             <constraint firstItem="0IV-Lj-p9z" firstAttribute="top" secondItem="ypr-2w-riV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="piT-HB-v8i"/>
                             <constraint firstItem="UJ0-O7-4eh" firstAttribute="leading" secondItem="PBN-yK-DeJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pqW-5L-BLY"/>
                             <constraint firstItem="dnj-HO-LSg" firstAttribute="leading" secondItem="Pig-AV-Kyt" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rFz-pD-Ifh"/>
                             <constraint firstItem="fKE-sj-Ysr" firstAttribute="leading" secondItem="Xiq-V1-JBS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="sej-TI-rrA"/>
                             <constraint firstItem="2xi-XC-QIH" firstAttribute="leading" secondItem="ypr-2w-riV" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tA4-J6-Wg2"/>
+                            <constraint firstItem="Pig-AV-Kyt" firstAttribute="baseline" secondItem="Wfw-LR-f3A" secondAttribute="baseline" type="default" id="u6E-GK-2nd"/>
                             <constraint firstItem="cEm-jn-MvU" firstAttribute="bottom" secondItem="dnj-HO-LSg" secondAttribute="bottom" type="default" id="uSV-nk-ecn"/>
                             <constraint firstItem="PBN-yK-DeJ" firstAttribute="leading" secondItem="0IV-Lj-p9z" secondAttribute="leading" type="default" id="uZP-l1-9xS"/>
                             <constraint firstItem="Pig-AV-Kyt" firstAttribute="leading" secondItem="42B-ji-mfU" secondAttribute="leading" type="default" id="v6f-W2-VkV"/>
-                            <constraint firstItem="f5e-yb-Y7f" firstAttribute="centerX" secondItem="W3F-6I-xMh" secondAttribute="centerX" type="default" id="vGv-yd-Jek"/>
                             <constraint firstItem="2xi-XC-QIH" firstAttribute="top" secondItem="ypr-2w-riV" secondAttribute="top" type="default" id="vMH-OI-Unn"/>
+                            <constraint firstItem="42B-ji-mfU" firstAttribute="leading" secondItem="fKE-sj-Ysr" secondAttribute="leading" type="default" id="vdQ-Vd-MT2"/>
                             <constraint firstItem="ypr-2w-riV" firstAttribute="baseline" secondItem="GgN-sY-Ddw" secondAttribute="baseline" type="default" id="vxU-jD-NfE"/>
                             <constraint firstItem="Wfw-LR-f3A" firstAttribute="top" secondItem="xxG-bv-BEJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wLh-Sh-r0m"/>
                             <constraint firstItem="dTD-FV-oQj" firstAttribute="top" secondItem="f5e-yb-Y7f" secondAttribute="top" type="default" id="ztv-lN-UOj"/>
@@ -382,32 +383,33 @@
                     </view>
                     <navigationItem key="navigationItem" id="34r-cb-gaX"/>
                     <connections>
-                        <outletCollection property="tileButtons" destination="W3F-6I-xMh" id="ifd-qi-FXZ"/>
-                        <outletCollection property="tileButtons" destination="GgN-sY-Ddw" id="ftI-7s-DLp"/>
-                        <outletCollection property="tileButtons" destination="ypr-2w-riV" id="SzW-6g-TFU"/>
-                        <outletCollection property="tileButtons" destination="2xi-XC-QIH" id="1i4-IK-I1r"/>
-                        <outletCollection property="tileButtons" destination="Xiq-V1-JBS" id="w9Q-da-cV2"/>
-                        <outletCollection property="tileButtons" destination="fKE-sj-Ysr" id="zQJ-29-qh2"/>
-                        <outletCollection property="tileButtons" destination="0IV-Lj-p9z" id="kp7-ln-X9a"/>
-                        <outletCollection property="tileButtons" destination="NFt-UP-HtI" id="Eg7-3l-1jm"/>
-                        <outletCollection property="tileButtons" destination="xxG-bv-BEJ" id="F0k-XR-Lpl"/>
-                        <outletCollection property="tileButtons" destination="42B-ji-mfU" id="Xt9-SB-cuR"/>
-                        <outletCollection property="tileButtons" destination="PBN-yK-DeJ" id="Lbw-nA-u2d"/>
-                        <outletCollection property="tileButtons" destination="UJ0-O7-4eh" id="qfK-c9-mvB"/>
-                        <outletCollection property="tileButtons" destination="Wfw-LR-f3A" id="hNP-B5-9vH"/>
-                        <outletCollection property="tileButtons" destination="Pig-AV-Kyt" id="Jch-bn-AfD"/>
-                        <outletCollection property="tileButtons" destination="dnj-HO-LSg" id="9n1-NA-IWM"/>
-                        <outletCollection property="tileButtons" destination="cEm-jn-MvU" id="nCV-aj-mBV"/>
+                        <outletCollection property="tileButtons" destination="W3F-6I-xMh" id="gmi-8B-3wo"/>
+                        <outletCollection property="tileButtons" destination="GgN-sY-Ddw" id="fcU-H3-cQ8"/>
+                        <outletCollection property="tileButtons" destination="ypr-2w-riV" id="QcQ-ta-d0h"/>
+                        <outletCollection property="tileButtons" destination="2xi-XC-QIH" id="ron-aT-wFI"/>
+                        <outletCollection property="tileButtons" destination="Xiq-V1-JBS" id="c66-pU-Efp"/>
+                        <outletCollection property="tileButtons" destination="fKE-sj-Ysr" id="B3D-5r-3rk"/>
+                        <outletCollection property="tileButtons" destination="0IV-Lj-p9z" id="TSr-GE-hVe"/>
+                        <outletCollection property="tileButtons" destination="NFt-UP-HtI" id="7Vu-hT-fjJ"/>
+                        <outletCollection property="tileButtons" destination="xxG-bv-BEJ" id="S3y-q9-oXK"/>
+                        <outletCollection property="tileButtons" destination="42B-ji-mfU" id="qWD-at-dVj"/>
+                        <outletCollection property="tileButtons" destination="PBN-yK-DeJ" id="Yxi-ID-F8T"/>
+                        <outletCollection property="tileButtons" destination="UJ0-O7-4eh" id="m9c-ss-VgI"/>
+                        <outletCollection property="tileButtons" destination="Wfw-LR-f3A" id="hmm-KG-I85"/>
+                        <outletCollection property="tileButtons" destination="Pig-AV-Kyt" id="3sC-Iy-s5b"/>
+                        <outletCollection property="tileButtons" destination="dnj-HO-LSg" id="HPN-nz-aLr"/>
+                        <outletCollection property="tileButtons" destination="cEm-jn-MvU" id="yTV-Ux-QJ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <exit id="HYt-Pz-7Rg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-780" y="-218"/>
+            <point key="canvasLocation" x="-754" y="-616"/>
         </scene>
-        <!--View Controller - Menu-->
+        <!--Menu View Controller - Menu-->
         <scene sceneID="nDG-8Y-tjz">
             <objects>
-                <viewController title="Menu" id="Bcf-b8-Rbe" sceneMemberID="viewController">
+                <viewController title="Menu" id="Bcf-b8-Rbe" customClass="MenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6n-bX-zPg">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -428,7 +430,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" animates="NO" id="X2e-7Q-AXT"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="crossDissolve" animates="NO" id="X2e-7Q-AXT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -442,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDm-9r-S5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-211" y="-142"/>
+            <point key="canvasLocation" x="-775" y="154"/>
         </scene>
     </scenes>
     <resources>

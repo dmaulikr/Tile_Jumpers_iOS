@@ -10,4 +10,7 @@
 
 @interface SliderViewController : UIViewController
 
+- (IBAction)unwindToSliderViewController:(UIStoryboardSegue *)unwindSegue;
+
 @end
+

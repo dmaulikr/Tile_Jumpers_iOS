@@ -16,9 +16,9 @@
 
 @implementation SliderViewController
 
-- (IBAction)backMenu:(UIButton *)sender {
-    self.tileButtons = nil;
-    self.board = nil;
+- (IBAction)unwindToSliderViewController:(UIStoryboardSegue *)unwindSegue
+{
+
 }
 
 - (IBAction)resetBoard:(UIButton *)sender {
@@ -156,8 +156,6 @@
 - (void) setTileButtons:(NSArray *)tileButtons {
     int i = 0;
 
-    if (_tileButtons)
-        _tileButtons = nil;
     _tileButtons = tileButtons;
     for (UIButton *tileButton in tileButtons) {
         [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
