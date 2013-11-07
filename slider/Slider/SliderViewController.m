@@ -11,6 +11,8 @@
 
 @interface SliderViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tileButtons;
+@property (strong, nonatomic) IBOutlet UILabel *solvable;
+@property (strong, nonatomic) IBOutlet UILabel *solved;
 @property (strong, nonatomic) Board *board;
 @end
 
@@ -32,6 +34,7 @@
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
         i++;
     }
+    [self updateLabels];
 }
 
 - (IBAction)moveTile:(UIButton *)sender {
@@ -143,7 +146,7 @@
         }
         
     }
-    
+    [self updateLabels];
 }
 
 - (Board *) board {
@@ -162,16 +165,34 @@
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
         i++;
     }
+    
+    
 }
 
 
 - (void)viewDidLoad
 {
+    [self updateLabels];
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
         
     }
+    
+}
+
+- (void) updateLabels {
+    if ([self.board solvable] == TRUE)
+        self.solvable.text = @"Solvable";
+    else
+        self.solvable.text = @"Unsolvable";
+    
+    
+    if ([self.board solved] == TRUE)
+        self.solved.text = @"Solved";
+    else
+        self.solved.text = @"Unsolved";
     
 }
 

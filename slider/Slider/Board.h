@@ -14,6 +14,7 @@
 - (void) addTile:(Tile *)tile;
 
 - (BOOL) solvable;
+- (BOOL) solved;
 
 @property (strong,nonatomic) NSMutableArray *current;
 

@@ -17,7 +17,7 @@
 + (NSArray *) validValues {
     static NSArray *validValues = nil;
     if (!validValues)
-        validValues = @[@"  ",@" 1",@" 2",@" 3",@" 4",@" 5",@" 6",@" 7",@" 8",@"9",@"10",@"11",@"12",@"13",@"14",@"15"];
+        validValues = @[@"  ",@" 1",@" 2",@" 3",@" 4",@" 5",@" 6",@" 7",@" 8",@" 9",@"10",@"11",@"12",@"13",@"14",@"15"];
     return validValues;
 }
 
@@ -45,8 +45,63 @@
     return randomTile;
 }
 
-- (BOOL) solvable {
+- (BOOL) solved {
+    NSInteger i;
+    
+    for (i = 0; i < 15; i++) {
+        if (![self.current[i] isEqual: [Board validValues][i+1] ] )
+            return FALSE;
+    }
     return TRUE;
+}
+
+- (BOOL) solvable {
+    NSMutableArray *tile;
+    NSInteger inversions=0;
+    NSInteger j= 16;
+    NSInteger i;
+    NSInteger x;
+    NSInteger y;
+    
+    tile = [[NSMutableArray alloc] init];
+   
+    [tile addObject:@"-1"];
+    for(i = 0; i < 16; i++) {
+        [tile addObject:self.current[i]];
+    }
+    
+    for(i = 1; i < 17; i++) {
+        if([tile[i] isEqual: [Board validValues][0]]) {
+            j = i;
+        }
+    }
+    if(j != 16) {
+        if(j < 13) {
+            for(; j < 13; j = j + 4) {
+                [tile replaceObjectAtIndex:j withObject: tile[j + 4]];
+                [tile replaceObjectAtIndex:j + 4 withObject:[Board validValues][0]];
+            }
+        }
+        for(; j < 16; j++) {
+            [tile replaceObjectAtIndex:j withObject: tile[j + 1]];
+            [tile replaceObjectAtIndex:j + 1 withObject:[Board validValues][0]];
+        }
+    }
+    for(x = 1; x < 16; x++) {
+        for(y = x + 1; y < 16; y++) {
+            if(tile[x] > tile[y]) {
+                inversions++;
+            }
+        }
+    }
+    
+    [tile removeAllObjects];
+                              
+    if(inversions % 2 == 0) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
     
 }
 
