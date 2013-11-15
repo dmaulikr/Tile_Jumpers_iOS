@@ -96,9 +96,9 @@
 - (void) updateLabels {
     if ([self.board solvable] == TRUE)
         self.solvable.text = @"Solvable";
-    else
-        self.solvable.text = @"Unsolvable";
-    
+    else {
+        self.solvable.text = @"Unsolvable";  
+    }
     
     if ([self.board solved] == TRUE)
         self.solved.text = @"Solved";

@@ -214,6 +214,18 @@
         [self.current addObject:[Board validValues][tile.value]];
     }
     
+    if(!self.solvable) {
+        if(self.current[0] == [Board validValues][0] || self.current[1] == [Board validValues][0]) {
+            NSString *temp = self.current[3];
+            [self.current replaceObjectAtIndex:3 withObject:self.current[4]];
+            [self.current replaceObjectAtIndex:4 withObject:temp];
+        } else {
+            NSString *temp = self.current[0];
+            [self.current replaceObjectAtIndex:0 withObject:self.current[1]];
+            [self.current replaceObjectAtIndex:1 withObject:temp];
+            
+        }
+    }
     return self;
 }
 
