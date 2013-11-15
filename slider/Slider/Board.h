@@ -15,6 +15,7 @@
 
 - (BOOL) solvable;
 - (BOOL) solved;
+- (BOOL) moveSliderBasic:(NSString *) tile;
 
 @property (strong,nonatomic) NSMutableArray *current;
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/Board.m"
-            timestampString = "405498779.455358"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-solvable"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/Board.m"
-            timestampString = "405507904.337321"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "-solvable"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/Board.m"
-            timestampString = "405507904.337321"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-solvable"
             landmarkType = "5">
             <Locations>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/Board.m"
-            timestampString = "405507904.337321"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "-solvable"
             landmarkType = "5">
          </BreakpointContent>
@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/Board.m"
-            timestampString = "405500808.753711"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "-solvable"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/Board.m"
-            timestampString = "405507770.048971"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-solvable"
             landmarkType = "5">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slider/SliderViewController.m"
-            timestampString = "405509133.574492"
+            timestampString = "406193973.26421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "-setTileButtons:"
             landmarkType = "5">
          </BreakpointContent>
