@@ -11,13 +11,18 @@
 
 @interface Board : NSObject
 
-- (void) addTile:(Tile *)tile;
+@property (nonatomic) NSInteger transport_one;
+@property (nonatomic) NSInteger transport_two;
+@property (strong,nonatomic) NSMutableArray *current;
+@property (nonatomic) NSInteger moves;
+@property (nonatomic) NSInteger solvability;
 
+- (void) addTile:(Tile *)tile;
+- (BOOL) moveSliderBasic:(NSString *) tile;
+- (BOOL) moveSliderPlus:(NSString *) tile;
 - (BOOL) solvable;
 - (BOOL) solved;
-- (BOOL) moveSliderBasic:(NSString *) tile;
-
-@property (strong,nonatomic) NSMutableArray *current;
+- (id) initWithName:(bool) transport;
 
 + (NSArray *) validValues;
 

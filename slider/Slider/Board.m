@@ -16,10 +16,12 @@
 
 - (BOOL) moveSliderBasic:(NSString *) tile {
     BOOL validMove = false;
+    NSInteger i;
+    NSInteger j;
     
     if ( ![tile isEqualToString: [Board validValues][0]]) {
-        NSInteger i = [self.current indexOfObject:tile];
-        NSInteger j = [self.current indexOfObject:[Board validValues][0]];
+        i = [self.current indexOfObject:tile];
+        j = [self.current indexOfObject:[Board validValues][0]];
         
         if (i == 0) {
             if (j == 1 || j == 4) {
@@ -105,8 +107,40 @@
             }
         }
     }
+    
+    if ( validMove == true ) {
+        self.moves++;
+        
+        self.current[j] = self.current[i];
+        self.current[i] = [Board validValues][0];
+        
+    }
     return validMove;
 }
+
+
+- (BOOL) moveSliderPlus:(NSString *) tile {
+    BOOL validMove = false;
+    
+    if ( [tile isEqualToString: self.current[self.transport_one]] ) {
+        self.current[self.transport_one] = self.current[self.transport_two];
+        self.current[self.transport_two] = tile;
+        self.moves++;
+        validMove = true;
+    } else if ([tile isEqualToString: self.current[self.transport_two]]) {
+        self.current[self.transport_two] = self.current[self.transport_one];
+        self.current[self.transport_one] = tile;
+        self.moves++;
+        validMove = true;
+    } else {
+        validMove = [self moveSliderBasic:tile];
+    }
+    if(validMove == true) {
+        [self getTransports];
+    }
+    return validMove;
+}
+
 
 + (NSArray *) validValues {
     static NSArray *validValues = nil;
@@ -199,33 +233,105 @@
     
 }
 
+-(void) getTransports
+{
+    self.transport_one = arc4random() % 16;
+    self.transport_two = arc4random() % 16;
+    
+    while (self.current[self.transport_one] == [Board validValues][0]) {
+        self.transport_one = arc4random() % 16;
+    }
+    while (self.current[self.transport_two] == [Board validValues][0] || self.transport_one == self.transport_two ) {
+        self.transport_two = arc4random() % 16;
+    }
+
+}
+-(id)initWithName:(bool) transport
+{
+    self = [super init];
+    if (self) {
+        int MAX_SOLVIBILITY = 2;
+        self.solvability = MAX_SOLVIBILITY;
+        while (self.solvability >= MAX_SOLVIBILITY) {
+            self.solvability = 0;
+            
+            if(self) {
+                for ( int i=0; i < 16; i++) {
+                    Tile *tile = [[Tile alloc] init];
+                    tile.value = i;
+                    [self addTile:tile];
+                }
+            }
+            for ( int i=0; i < 16; i++) {
+                Tile *tile = self.getRandomTile;
+                [self.current addObject:[Board validValues][tile.value]];
+            }
+
+            [self getTransports];
+            
+            for (int i=0; i<15; i++) {
+                if (self.current[i]==[Board validValues][i+1]) {
+                    self.solvability++;
+                }
+                
+            }
+            if (self.solvability >= MAX_SOLVIBILITY) {
+                [self.current removeAllObjects];
+                [self.tiles removeAllObjects];
+            }
+        }
+    }
+    self.moves = 0;    return self;
+}
+
 - (id)init {
     self = [super init];
-    
-    if(self) {
-        for ( int i=0; i < 16; i++) {
-            Tile *tile = [[Tile alloc] init];
-            tile.value = i;
-            [self addTile:tile];
-        }
-    }
-    for ( int i=0; i < 16; i++) {
-        Tile *tile = self.getRandomTile;
-        [self.current addObject:[Board validValues][tile.value]];
-    }
-    
-    if(!self.solvable) {
-        if(self.current[0] == [Board validValues][0] || self.current[1] == [Board validValues][0]) {
-            NSString *temp = self.current[3];
-            [self.current replaceObjectAtIndex:3 withObject:self.current[4]];
-            [self.current replaceObjectAtIndex:4 withObject:temp];
-        } else {
-            NSString *temp = self.current[0];
-            [self.current replaceObjectAtIndex:0 withObject:self.current[1]];
-            [self.current replaceObjectAtIndex:1 withObject:temp];
+    if (self) {
+        int MAX_SOLVIBILITY = 2;
+        self.solvability = MAX_SOLVIBILITY;
+        while (self.solvability >= MAX_SOLVIBILITY) {
+            self.solvability = 0;
             
+            if(self) {
+                for ( int i=0; i < 16; i++) {
+                    Tile *tile = [[Tile alloc] init];
+                    tile.value = i;
+                    [self addTile:tile];
+                }
+            }
+            for ( int i=0; i < 16; i++) {
+                Tile *tile = self.getRandomTile;
+                [self.current addObject:[Board validValues][tile.value]];
+            }
+            
+            if(!self.solvable) {
+                if(self.current[0] == [Board validValues][0] || self.current[1] == [Board validValues][0]) {
+                    NSString *temp = self.current[3];
+                    [self.current replaceObjectAtIndex:3 withObject:self.current[4]];
+                    [self.current replaceObjectAtIndex:4 withObject:temp];
+                } else {
+                    NSString *temp = self.current[0];
+                    [self.current replaceObjectAtIndex:0 withObject:self.current[1]];
+                    [self.current replaceObjectAtIndex:1 withObject:temp];
+                    
+                }
+            }
+            
+            for (int i=0; i<15; i++) {
+                if (self.current[i]==[Board validValues][i+1]) {
+                    self.solvability++;
+                }
+                
+            }
+            if (self.solvability >= MAX_SOLVIBILITY) {
+                [self.current removeAllObjects];
+                [self.tiles removeAllObjects];
+            }
         }
     }
+    self.moves = 0;
+    self.transport_one = -1;
+    self.transport_two = -1;
     return self;
 }
 

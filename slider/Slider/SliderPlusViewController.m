@@ -1,27 +1,25 @@
 //
-//  SliderViewController.m
+//  SliderPlusViewController.m
 //  Slider
 //
-//  Created by Monte Jeu on 9/27/13.
+//  Created by Monte Jeu on 11/16/13.
 //  Copyright (c) 2013 Monte Jeu. All rights reserved.
 //
 
-#import "SliderViewController.h"
+#import "SliderPlusViewController.h"
 #import "Board.h"
 
-@interface SliderViewController ()
+@interface SliderPlusViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tileButtons;
 @property (strong, nonatomic) IBOutlet UILabel *moves;
 @property (strong, nonatomic) IBOutlet UILabel *solved;
 @property (strong, nonatomic) Board *board;
+@property (nonatomic) NSInteger trans_one;
+@property (nonatomic) NSInteger trans_two;
 @end
 
-@implementation SliderViewController
+@implementation SliderPlusViewController
 
-- (IBAction)unwindToSliderViewController:(UIStoryboardSegue *)unwindSegue
-{
-
-}
 
 - (IBAction)resetBoard:(UIButton *)sender {
     self.board = nil;
@@ -32,6 +30,14 @@
         
         [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
+
+        if(self.board.transport_two == i || self.board.transport_one == i) {
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateNormal];
+        } else {
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateNormal];
+        }
         i++;
     }
     [self updateLabels];
@@ -41,31 +47,47 @@
     if(self.board.solved == true)
         return;
     
-    if([self.board moveSliderBasic: sender.currentTitle]) {
+    if([self.board moveSliderPlus: sender.currentTitle]) {
         NSInteger i=0;
         for (UIButton *tileButton in self.tileButtons) {
             [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
             [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
+            if(self.board.transport_two == i || self.board.transport_one == i) {
+                [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateSelected];
+                [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateNormal];
+            } else {
+                [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateSelected];
+                [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateNormal];
+            }
             i++;
         }
         [self updateLabels];
     }
 }
 
+
 - (Board *) board {
     if (!_board)
-       _board = [[Board alloc]init];
+        _board = [[Board alloc]initWithName:true];
     
     return _board;
 }
 
 - (void) setTileButtons:(NSArray *)tileButtons {
     int i = 0;
-
+    
     _tileButtons = tileButtons;
     for (UIButton *tileButton in tileButtons) {
         [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
+ 
+        if(self.board.transport_two == i || self.board.transport_one == i) {
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateNormal];
+        } else {
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateNormal];
+        }
         i++;
     }
     
@@ -76,7 +98,7 @@
 - (void)viewDidLoad
 {
     [self updateLabels];
-
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
