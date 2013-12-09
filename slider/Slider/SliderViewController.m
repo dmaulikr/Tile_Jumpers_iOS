@@ -7,20 +7,31 @@
 //
 
 #import "SliderViewController.h"
+#import "SliderHelpViewController.h"
 #import "Board.h"
 
 @interface SliderViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tileButtons;
 @property (strong, nonatomic) IBOutlet UILabel *moves;
 @property (strong, nonatomic) IBOutlet UILabel *solved;
+@property (strong, nonatomic) IBOutlet UIView *sliderHelpView;
 @property (strong, nonatomic) Board *board;
+@property (strong, nonatomic) SliderHelpViewController *sliderHelpViewController;
+
 @end
 
 @implementation SliderViewController
 
-- (IBAction)unwindToSliderViewController:(UIStoryboardSegue *)unwindSegue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqual:@"sliderHelpSegue"]) {
+        self.sliderHelpViewController = [segue destinationViewController];
+    }
+}
 
+- (IBAction)showHelpScreen:(id)sender {
+    [self.sliderHelpViewController loadImages];
+    self.sliderHelpView.hidden = false;
 }
 
 - (IBAction)resetBoard:(UIButton *)sender {
@@ -68,8 +79,6 @@
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
         i++;
     }
-    
-    
 }
 
 

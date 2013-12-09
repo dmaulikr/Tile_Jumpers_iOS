@@ -16,6 +16,9 @@
 @property (strong, nonatomic) Board *board;
 @property (nonatomic) NSInteger trans_one;
 @property (nonatomic) NSInteger trans_two;
+@property (nonatomic) NSTimeInterval startTime;
+@property (nonatomic) NSTimeInterval endTime;
+
 @end
 
 @implementation SliderPlusViewController
@@ -67,9 +70,11 @@
 
 
 - (Board *) board {
-    if (!_board)
+    if (!_board) {
         _board = [[Board alloc]initWithName:true];
-    
+        self.startTime = [NSDate timeIntervalSinceReferenceDate];
+    }
+
     return _board;
 }
 
@@ -110,8 +115,15 @@
 - (void) updateLabels {
     self.moves.text = [NSString stringWithFormat: @"Moves: %d", self.board.moves];
     
-    if ([self.board solved] == TRUE)
-        self.solved.text = @"Solved!";
+    if ([self.board solved] == TRUE) {
+        self.endTime = [NSDate timeIntervalSinceReferenceDate];
+        NSInteger solveTime = self.endTime - self.startTime;
+        if (solveTime > 999) {
+            solveTime = 999;
+        }
+        self.solved.text = [NSString stringWithFormat: @"Solved! %d seconds.", solveTime];
+
+    }
     else
         self.solved.text = @"";
     

@@ -26,6 +26,9 @@
 		300B1C5417F6B5ED004AB715 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 300B1C5317F6B5ED004AB715 /* Default-568h@2x.png */; };
 		300B1C5717F7DE2D004AB715 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 300B1C5617F7DE2D004AB715 /* Tile.m */; };
 		300B1C5A17F7E53F004AB715 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 300B1C5917F7E53F004AB715 /* Board.m */; };
+		300B5A0718431BBC004A1EE7 /* SliderHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300B5A0618431BBC004A1EE7 /* SliderHelpViewController.m */; };
+		303576C6184B0ACF00AD9828 /* white60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 303576C5184B0ACF00AD9828 /* white60x60.png */; };
+		303576C8184B217200AD9828 /* white280x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 303576C7184B217200AD9828 /* white280x100.png */; };
 		309F9D07181FAC6900FFDBAA /* grey72x43.png in Resources */ = {isa = PBXBuildFile; fileRef = 309F9D06181FAC6900FFDBAA /* grey72x43.png */; };
 		30B330631825E5B000E727B6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B330621825E5B000E727B6 /* MenuViewController.m */; };
 		30B390FF181F96780049E370 /* blue60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B390FE181F96780049E370 /* blue60x60.png */; };
@@ -71,6 +74,10 @@
 		300B1C5617F7DE2D004AB715 /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 		300B1C5817F7E53F004AB715 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		300B1C5917F7E53F004AB715 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		300B5A0518431BBC004A1EE7 /* SliderHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderHelpViewController.h; sourceTree = "<group>"; };
+		300B5A0618431BBC004A1EE7 /* SliderHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderHelpViewController.m; sourceTree = "<group>"; };
+		303576C5184B0ACF00AD9828 /* white60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white60x60.png; sourceTree = SOURCE_ROOT; };
+		303576C7184B217200AD9828 /* white280x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white280x100.png; sourceTree = SOURCE_ROOT; };
 		309F9D06181FAC6900FFDBAA /* grey72x43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey72x43.png; sourceTree = SOURCE_ROOT; };
 		30B330611825E5B000E727B6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		30B330621825E5B000E727B6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -145,16 +152,20 @@
 				300B1C5917F7E53F004AB715 /* Board.m */,
 				300B1C1F17F68298004AB715 /* SliderAppDelegate.m */,
 				300B1C2717F68298004AB715 /* MainStoryboard_iPhone.storyboard */,
+				303576C7184B217200AD9828 /* white280x100.png */,
 				300B1C2A17F68298004AB715 /* MainStoryboard_iPad.storyboard */,
 				30B330611825E5B000E727B6 /* MenuViewController.h */,
 				30B330621825E5B000E727B6 /* MenuViewController.m */,
 				309F9D06181FAC6900FFDBAA /* grey72x43.png */,
 				30B390FE181F96780049E370 /* blue60x60.png */,
+				303576C5184B0ACF00AD9828 /* white60x60.png */,
 				30E9E7A6183891C3009E9B74 /* red60x60.png */,
 				30E9E7A318387F2C009E9B74 /* SliderPlusViewController.h */,
 				30E9E7A418387F2C009E9B74 /* SliderPlusViewController.m */,
 				300B1C2D17F68298004AB715 /* SliderViewController.h */,
 				300B1C2E17F68298004AB715 /* SliderViewController.m */,
+				300B5A0518431BBC004A1EE7 /* SliderHelpViewController.h */,
+				300B5A0618431BBC004A1EE7 /* SliderHelpViewController.m */,
 				300B1C1617F68298004AB715 /* Supporting Files */,
 			);
 			path = Slider;
@@ -264,8 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303576C8184B217200AD9828 /* white280x100.png in Resources */,
 				300B1C1A17F68298004AB715 /* InfoPlist.strings in Resources */,
 				30E9E7A7183891C3009E9B74 /* red60x60.png in Resources */,
+				303576C6184B0ACF00AD9828 /* white60x60.png in Resources */,
 				300B1C2217F68298004AB715 /* Default.png in Resources */,
 				300B1C2417F68298004AB715 /* Default@2x.png in Resources */,
 				30B390FF181F96780049E370 /* blue60x60.png in Resources */,
@@ -307,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300B5A0718431BBC004A1EE7 /* SliderHelpViewController.m in Sources */,
 				300B1C1C17F68298004AB715 /* main.m in Sources */,
 				30B330631825E5B000E727B6 /* MenuViewController.m in Sources */,
 				300B1C2017F68298004AB715 /* SliderAppDelegate.m in Sources */,
