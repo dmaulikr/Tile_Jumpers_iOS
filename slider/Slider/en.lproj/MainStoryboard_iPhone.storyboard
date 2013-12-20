@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Bcf-b8-Rbe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Bcf-b8-Rbe">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -17,21 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-yb-Y7f">
-                                <rect key="frame" x="20" y="20" width="75" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back1_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="jJN-eg-2it">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back" backgroundImage="grey72x43.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="JRg-eg-UoL"/>
+                                    <constraint firstAttribute="height" constant="568" id="hLd-Bb-n40"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-yb-Y7f" userLabel="back button">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6pE-US-fMZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="88G-P6-lPZ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonPress:" destination="2" eventType="touchUpInside" id="8Ky-GT-nMr"/>
                                     <segue destination="HYt-Pz-7Rg" kind="unwind" unwindAction="unwindToMenuViewController:" id="nU8-nW-DYS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTD-FV-oQj">
-                                <rect key="frame" x="225" y="20" width="75" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTD-FV-oQj" userLabel="reset button">
+                                <rect key="frame" x="250" y="20" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset" backgroundImage="grey72x43.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Lce-71-8oc"/>
+                                    <constraint firstAttribute="width" constant="50" id="ykX-RW-PnL"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="reset.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -39,199 +56,14 @@
                                     <action selector="resetBoard:" destination="2" eventType="touchUpInside" id="py7-zc-byT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3F-6I-xMh">
-                                <rect key="frame" x="28" y="284" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl1-JG-eL3" userLabel="help button">
+                                <rect key="frame" x="135" y="20" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="0" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="jA7-WK-1d1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-sY-Ddw">
-                                <rect key="frame" x="96" y="284" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="iGR-wC-qwe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypr-2w-riV">
-                                <rect key="frame" x="164" y="284" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="2" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="LaO-dt-RLW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xi-XC-QIH">
-                                <rect key="frame" x="232" y="284" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="3" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="JDe-66-6Kb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiq-V1-JBS">
-                                <rect key="frame" x="28" y="352" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="4" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="1EE-Iw-xge"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKE-sj-Ysr">
-                                <rect key="frame" x="96" y="352" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="5" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="eXq-9R-puK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IV-Lj-p9z">
-                                <rect key="frame" x="164" y="352" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="6" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ch6-Gw-fsh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-UP-HtI">
-                                <rect key="frame" x="232" y="352" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="7" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="gX4-bL-UY2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxG-bv-BEJ">
-                                <rect key="frame" x="28" y="420" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="8" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="lkf-9b-4cU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42B-ji-mfU">
-                                <rect key="frame" x="96" y="420" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="9" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="aHb-7B-Qsm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBN-yK-DeJ">
-                                <rect key="frame" x="164" y="420" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="10" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="aRA-p8-wIn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ0-O7-4eh">
-                                <rect key="frame" x="232" y="420" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="11" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ZFh-iZ-7sa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfw-LR-f3A">
-                                <rect key="frame" x="29" y="488" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="12" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="BLX-Yg-zoO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-AV-Kyt">
-                                <rect key="frame" x="97" y="488" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="13" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="wap-b0-Ggg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnj-HO-LSg">
-                                <rect key="frame" x="165" y="488" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="14" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="6Wh-75-6Zb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-jn-MvU">
-                                <rect key="frame" x="233" y="488" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="15" backgroundImage="blue60x60.png">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="glf-HL-jm6"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qle-DU-MML">
-                                <rect key="frame" x="20" y="73" width="100" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="U" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU2-Vc-UGC">
-                                <rect key="frame" x="20" y="121" width="100" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl1-JG-eL3">
-                                <rect key="frame" x="130" y="20" width="60" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Help" backgroundImage="red60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mgc-p3-NnJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="WYF-Fl-eeJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="help.png">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -239,7 +71,268 @@
                                     <action selector="showHelpScreen:" destination="2" eventType="touchUpInside" id="9j8-Rh-CRM"/>
                                 </connections>
                             </button>
-                            <containerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-Ep-fRX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3F-6I-xMh">
+                                <rect key="frame" x="28" y="284" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Zap-ny-t2V"/>
+                                    <constraint firstAttribute="width" constant="60" id="ejK-Zv-6Fs"/>
+                                </constraints>
+                                <state key="normal" title="0" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="jA7-WK-1d1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-sY-Ddw">
+                                <rect key="frame" x="96" y="284" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fAv-7r-Gf5"/>
+                                    <constraint firstAttribute="width" constant="60" id="qDF-vT-BC4"/>
+                                </constraints>
+                                <state key="normal" title="1" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="iGR-wC-qwe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypr-2w-riV">
+                                <rect key="frame" x="164" y="284" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HLp-5P-M1w"/>
+                                    <constraint firstAttribute="width" constant="60" id="RSs-FA-uKg"/>
+                                </constraints>
+                                <state key="normal" title="2" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="LaO-dt-RLW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xi-XC-QIH">
+                                <rect key="frame" x="232" y="284" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PU3-m7-9az"/>
+                                    <constraint firstAttribute="width" constant="60" id="uij-OS-gnd"/>
+                                </constraints>
+                                <state key="normal" title="3" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="JDe-66-6Kb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiq-V1-JBS">
+                                <rect key="frame" x="28" y="352" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KKg-Kn-dEO"/>
+                                    <constraint firstAttribute="width" constant="60" id="uQT-N6-Iz4"/>
+                                </constraints>
+                                <state key="normal" title="4" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="1EE-Iw-xge"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKE-sj-Ysr">
+                                <rect key="frame" x="96" y="352" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DWu-yv-T25"/>
+                                    <constraint firstAttribute="height" constant="60" id="YgD-rO-YGL"/>
+                                </constraints>
+                                <state key="normal" title="5" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="eXq-9R-puK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IV-Lj-p9z">
+                                <rect key="frame" x="164" y="352" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="ewx-kR-uPx"/>
+                                    <constraint firstAttribute="height" constant="60" id="kxv-KB-Mix"/>
+                                </constraints>
+                                <state key="normal" title="6" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ch6-Gw-fsh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-UP-HtI">
+                                <rect key="frame" x="232" y="352" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="CIN-3c-6cL"/>
+                                    <constraint firstAttribute="height" constant="60" id="DxI-wV-fQa"/>
+                                </constraints>
+                                <state key="normal" title="7" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="gX4-bL-UY2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxG-bv-BEJ">
+                                <rect key="frame" x="28" y="420" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="PBe-fU-S5f"/>
+                                    <constraint firstAttribute="height" constant="60" id="dXS-AW-x8m"/>
+                                </constraints>
+                                <state key="normal" title="8" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="lkf-9b-4cU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42B-ji-mfU">
+                                <rect key="frame" x="96" y="420" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ota-tK-qmg"/>
+                                    <constraint firstAttribute="width" constant="60" id="UUg-BU-JEz"/>
+                                </constraints>
+                                <state key="normal" title="9" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="aHb-7B-Qsm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBN-yK-DeJ">
+                                <rect key="frame" x="164" y="420" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NJH-3O-Lad"/>
+                                    <constraint firstAttribute="width" constant="60" id="iQk-jm-5rE"/>
+                                </constraints>
+                                <state key="normal" title="10" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="aRA-p8-wIn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ0-O7-4eh">
+                                <rect key="frame" x="232" y="420" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="OY6-Jf-kAU"/>
+                                    <constraint firstAttribute="height" constant="60" id="x4u-Xs-9GF"/>
+                                </constraints>
+                                <state key="normal" title="11" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="ZFh-iZ-7sa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfw-LR-f3A">
+                                <rect key="frame" x="28" y="488" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Hll-io-cQf"/>
+                                    <constraint firstAttribute="height" constant="60" id="ilG-Vj-8to"/>
+                                </constraints>
+                                <state key="normal" title="12" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="BLX-Yg-zoO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-AV-Kyt">
+                                <rect key="frame" x="96" y="488" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="G3S-lO-oiw"/>
+                                    <constraint firstAttribute="height" constant="60" id="l68-3C-dLu"/>
+                                </constraints>
+                                <state key="normal" title="13" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="wap-b0-Ggg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnj-HO-LSg">
+                                <rect key="frame" x="164" y="488" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CHw-Qa-o4X"/>
+                                    <constraint firstAttribute="width" constant="60" id="Iyz-bG-c6T"/>
+                                </constraints>
+                                <state key="normal" title="14" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="6Wh-75-6Zb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-jn-MvU">
+                                <rect key="frame" x="232" y="488" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="QT7-cF-n7k"/>
+                                    <constraint firstAttribute="height" constant="60" id="kdM-NN-unS"/>
+                                </constraints>
+                                <state key="normal" title="15" backgroundImage="tile_1.png">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveTile:" destination="2" eventType="touchUpInside" id="glf-HL-jm6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qle-DU-MML">
+                                <rect key="frame" x="20" y="111" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Vjr-f4-xjd"/>
+                                    <constraint firstAttribute="width" constant="280" id="vcR-IQ-LjK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="U" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU2-Vc-UGC">
+                                <rect key="frame" x="20" y="144" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4SQ-mf-jWn"/>
+                                    <constraint firstAttribute="width" constant="280" id="b5x-OF-YcU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-Ep-fRX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -248,13 +341,72 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="56S-EH-Ywp" firstAttribute="top" secondItem="cEm-jn-MvU" secondAttribute="bottom" constant="20" id="1Ob-cY-3kL"/>
+                            <constraint firstItem="dnj-HO-LSg" firstAttribute="top" secondItem="PBN-yK-DeJ" secondAttribute="bottom" constant="8" id="1Y8-iJ-S8G"/>
+                            <constraint firstItem="dTD-FV-oQj" firstAttribute="top" secondItem="iru-Fc-8uf" secondAttribute="bottom" id="1gC-Q6-yAH"/>
+                            <constraint firstAttribute="trailing" secondItem="NFt-UP-HtI" secondAttribute="trailing" constant="28" id="2rf-Vc-E5W"/>
+                            <constraint firstItem="xxG-bv-BEJ" firstAttribute="top" secondItem="Xiq-V1-JBS" secondAttribute="bottom" constant="8" id="4Kj-ac-9Di"/>
+                            <constraint firstItem="cEm-jn-MvU" firstAttribute="leading" secondItem="dnj-HO-LSg" secondAttribute="trailing" constant="8" id="5vz-jU-9sD"/>
+                            <constraint firstItem="PBN-yK-DeJ" firstAttribute="leading" secondItem="42B-ji-mfU" secondAttribute="trailing" constant="8" id="71z-d1-A8Q"/>
+                            <constraint firstAttribute="trailing" secondItem="jJN-eg-2it" secondAttribute="trailing" id="7ei-YA-IoG"/>
+                            <constraint firstItem="f5e-yb-Y7f" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" id="9J0-Ej-TSH"/>
+                            <constraint firstAttribute="trailing" secondItem="zU2-Vc-UGC" secondAttribute="trailing" constant="20" id="AYP-nx-Obx"/>
+                            <constraint firstItem="NFt-UP-HtI" firstAttribute="leading" secondItem="0IV-Lj-p9z" secondAttribute="trailing" constant="8" id="Bbm-7J-qST"/>
+                            <constraint firstItem="NFt-UP-HtI" firstAttribute="top" secondItem="2xi-XC-QIH" secondAttribute="bottom" constant="8" id="F8L-hf-imJ"/>
+                            <constraint firstItem="2xi-XC-QIH" firstAttribute="leading" secondItem="ypr-2w-riV" secondAttribute="trailing" constant="8" id="G4p-j0-Bol"/>
+                            <constraint firstItem="Wfw-LR-f3A" firstAttribute="top" secondItem="xxG-bv-BEJ" secondAttribute="bottom" constant="8" id="Iec-OR-whB"/>
+                            <constraint firstItem="Pig-AV-Kyt" firstAttribute="top" secondItem="42B-ji-mfU" secondAttribute="bottom" constant="8" id="JcV-f1-BRm"/>
+                            <constraint firstAttribute="trailing" secondItem="dTD-FV-oQj" secondAttribute="trailing" constant="20" id="K7B-CK-brY"/>
+                            <constraint firstItem="56S-EH-Ywp" firstAttribute="top" secondItem="Pig-AV-Kyt" secondAttribute="bottom" constant="20" id="MiP-UV-dH2"/>
+                            <constraint firstItem="Fl1-JG-eL3" firstAttribute="leading" secondItem="f5e-yb-Y7f" secondAttribute="trailing" constant="65" id="N8u-um-U0v"/>
+                            <constraint firstItem="GgN-sY-Ddw" firstAttribute="leading" secondItem="W3F-6I-xMh" secondAttribute="trailing" constant="8" id="NVn-vj-khi"/>
+                            <constraint firstItem="h3g-Ep-fRX" firstAttribute="top" secondItem="3" secondAttribute="top" id="PFp-4S-lfE"/>
+                            <constraint firstItem="Fl1-JG-eL3" firstAttribute="top" secondItem="iru-Fc-8uf" secondAttribute="bottom" id="PaV-ty-ytR"/>
+                            <constraint firstAttribute="trailing" secondItem="UJ0-O7-4eh" secondAttribute="trailing" constant="28" id="QIX-et-McN"/>
+                            <constraint firstItem="f5e-yb-Y7f" firstAttribute="top" secondItem="iru-Fc-8uf" secondAttribute="bottom" id="QO1-Xd-jvh"/>
+                            <constraint firstItem="ypr-2w-riV" firstAttribute="leading" secondItem="GgN-sY-Ddw" secondAttribute="trailing" constant="8" id="Rrx-QE-KPV"/>
+                            <constraint firstItem="zU2-Vc-UGC" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" id="S6i-U3-arz"/>
+                            <constraint firstItem="0IV-Lj-p9z" firstAttribute="leading" secondItem="fKE-sj-Ysr" secondAttribute="trailing" constant="8" id="SLL-g4-8wn"/>
+                            <constraint firstItem="56S-EH-Ywp" firstAttribute="top" secondItem="dnj-HO-LSg" secondAttribute="bottom" constant="20" id="Xg5-Jh-GBH"/>
+                            <constraint firstItem="qle-DU-MML" firstAttribute="top" secondItem="Fl1-JG-eL3" secondAttribute="bottom" constant="41" id="YBR-9Q-3x9"/>
+                            <constraint firstItem="PBN-yK-DeJ" firstAttribute="top" secondItem="0IV-Lj-p9z" secondAttribute="bottom" constant="8" id="YFP-Np-Q5g"/>
+                            <constraint firstItem="42B-ji-mfU" firstAttribute="top" secondItem="fKE-sj-Ysr" secondAttribute="bottom" constant="8" id="atK-tw-C4U"/>
+                            <constraint firstItem="h3g-Ep-fRX" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="bSh-EG-9wX"/>
+                            <constraint firstItem="0IV-Lj-p9z" firstAttribute="top" secondItem="ypr-2w-riV" secondAttribute="bottom" constant="8" id="cBa-6p-ARO"/>
+                            <constraint firstItem="UJ0-O7-4eh" firstAttribute="leading" secondItem="PBN-yK-DeJ" secondAttribute="trailing" constant="8" id="cmU-ht-byL"/>
+                            <constraint firstItem="jJN-eg-2it" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="eeo-Y9-GTl"/>
+                            <constraint firstItem="zU2-Vc-UGC" firstAttribute="top" secondItem="qle-DU-MML" secondAttribute="bottom" constant="8" id="iQR-Nh-tZs"/>
+                            <constraint firstItem="56S-EH-Ywp" firstAttribute="top" secondItem="Wfw-LR-f3A" secondAttribute="bottom" constant="20" id="jpE-CR-2UL"/>
+                            <constraint firstItem="56S-EH-Ywp" firstAttribute="top" secondItem="jJN-eg-2it" secondAttribute="bottom" id="k1a-VT-c6O"/>
+                            <constraint firstItem="qle-DU-MML" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" id="klq-GX-cBt"/>
+                            <constraint firstItem="dnj-HO-LSg" firstAttribute="leading" secondItem="Pig-AV-Kyt" secondAttribute="trailing" constant="8" id="lCp-9t-kxi"/>
+                            <constraint firstAttribute="trailing" secondItem="h3g-Ep-fRX" secondAttribute="trailing" id="mXF-Hi-J9U"/>
+                            <constraint firstItem="42B-ji-mfU" firstAttribute="leading" secondItem="xxG-bv-BEJ" secondAttribute="trailing" constant="8" id="puI-Fn-43X"/>
+                            <constraint firstAttribute="trailing" secondItem="cEm-jn-MvU" secondAttribute="trailing" constant="28" id="rDL-h1-Tnr"/>
+                            <constraint firstItem="fKE-sj-Ysr" firstAttribute="top" secondItem="GgN-sY-Ddw" secondAttribute="bottom" constant="8" id="sCt-Ud-bFn"/>
+                            <constraint firstItem="UJ0-O7-4eh" firstAttribute="top" secondItem="NFt-UP-HtI" secondAttribute="bottom" constant="8" id="seU-Fd-g1I"/>
+                            <constraint firstAttribute="trailing" secondItem="qle-DU-MML" secondAttribute="trailing" constant="20" id="t5y-we-UrU"/>
+                            <constraint firstItem="56S-EH-Ywp" firstAttribute="top" secondItem="h3g-Ep-fRX" secondAttribute="bottom" id="uLa-oB-ynH"/>
+                            <constraint firstAttribute="trailing" secondItem="2xi-XC-QIH" secondAttribute="trailing" constant="28" id="uV4-2a-REc"/>
+                            <constraint firstItem="cEm-jn-MvU" firstAttribute="top" secondItem="UJ0-O7-4eh" secondAttribute="bottom" constant="8" id="uVN-DF-Glc"/>
+                            <constraint firstItem="Pig-AV-Kyt" firstAttribute="leading" secondItem="Wfw-LR-f3A" secondAttribute="trailing" constant="8" id="yKP-7Q-C3J"/>
+                            <constraint firstItem="Xiq-V1-JBS" firstAttribute="top" secondItem="W3F-6I-xMh" secondAttribute="bottom" constant="8" id="yP2-NV-zex"/>
+                            <constraint firstItem="dTD-FV-oQj" firstAttribute="leading" secondItem="Fl1-JG-eL3" secondAttribute="trailing" constant="65" id="zMc-RY-5Rn"/>
+                            <constraint firstItem="fKE-sj-Ysr" firstAttribute="leading" secondItem="Xiq-V1-JBS" secondAttribute="trailing" constant="8" id="zmY-62-EPr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="34r-cb-gaX"/>
                     <connections>
                         <outlet property="moves" destination="qle-DU-MML" id="ffb-re-iHm"/>
+                        <outlet property="sliderBackButton" destination="f5e-yb-Y7f" id="QJZ-Rj-hEn"/>
+                        <outlet property="sliderBackground" destination="jJN-eg-2it" id="6QT-In-gsu"/>
+                        <outlet property="sliderContainer" destination="h3g-Ep-fRX" id="YFQ-W5-oOm"/>
+                        <outlet property="sliderHelp" destination="Fl1-JG-eL3" id="jeU-FT-CGj"/>
                         <outlet property="sliderHelpView" destination="h3g-Ep-fRX" id="Q84-Ju-obb"/>
+                        <outlet property="sliderReset" destination="dTD-FV-oQj" id="PQD-Sj-4Qs"/>
                         <outlet property="solved" destination="zU2-Vc-UGC" id="8jD-bo-Wiu"/>
                         <outletCollection property="tileButtons" destination="W3F-6I-xMh" id="gmi-8B-3wo"/>
                         <outletCollection property="tileButtons" destination="GgN-sY-Ddw" id="fcU-H3-cQ8"/>
@@ -277,7 +429,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <exit id="HYt-Pz-7Rg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1514" y="-1418"/>
+            <point key="canvasLocation" x="-1514" y="-1498"/>
         </scene>
         <!--Slider Plus View Controller-->
         <scene sceneID="XvH-0C-NFt">
@@ -291,10 +443,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-zq-cbP">
-                                <rect key="frame" x="20" y="20" width="68" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back2_s.png" translatesAutoresizingMaskIntoConstraints="NO" id="VKA-b5-BfI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back" backgroundImage="grey72x43.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="8ue-4f-ICF"/>
+                                    <constraint firstAttribute="width" constant="320" id="TfK-bh-A5g"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-zq-cbP" userLabel="back button">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="rDY-pc-HOs"/>
+                                    <constraint firstAttribute="height" constant="50" id="skC-HM-2eW"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -302,10 +466,14 @@
                                     <segue destination="buR-1r-KG1" kind="unwind" unwindAction="unwindToMenuViewController:" id="wmg-Gv-26r"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNt-3w-Jav">
-                                <rect key="frame" x="232" y="20" width="68" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNt-3w-Jav" userLabel="reset button">
+                                <rect key="frame" x="250" y="20" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset" backgroundImage="grey72x43.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="B6S-7y-Zcx"/>
+                                    <constraint firstAttribute="height" constant="50" id="l6i-ZK-Bav"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="reset.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -314,10 +482,14 @@
                                     <action selector="resetBoard:" destination="2" eventType="touchUpInside" id="aws-Db-N8K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-aU-ib6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-aU-ib6">
                                 <rect key="frame" x="28" y="284" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="0" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="GHA-h5-Uwc"/>
+                                    <constraint firstAttribute="height" constant="60" id="QGv-ka-Txu"/>
+                                </constraints>
+                                <state key="normal" title="0" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -325,10 +497,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="pPp-3A-GIq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-h8-pcj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-h8-pcj">
                                 <rect key="frame" x="96" y="284" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8Ao-cA-0d1"/>
+                                    <constraint firstAttribute="height" constant="60" id="xDK-40-Gkj"/>
+                                </constraints>
+                                <state key="normal" title="1" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -337,10 +513,14 @@
                                     <action selector="moveTile:" destination="AaJ-Ve-xjK" eventType="touchUpInside" id="Cag-Mo-54N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z65-kB-RLK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z65-kB-RLK">
                                 <rect key="frame" x="164" y="284" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="2" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2b7-Vj-HNf"/>
+                                    <constraint firstAttribute="width" constant="60" id="PcK-4N-GvH"/>
+                                </constraints>
+                                <state key="normal" title="2" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -349,10 +529,14 @@
                                     <action selector="moveTile:" destination="AaJ-Ve-xjK" eventType="touchUpInside" id="sHS-7Z-Y4K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyE-ox-Ijm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyE-ox-Ijm">
                                 <rect key="frame" x="232" y="284" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="3" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6hq-op-PjP"/>
+                                    <constraint firstAttribute="width" constant="60" id="AFM-2b-T7J"/>
+                                </constraints>
+                                <state key="normal" title="3" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -361,10 +545,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="VZs-98-Pn2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjM-HY-Gne">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjM-HY-Gne">
                                 <rect key="frame" x="28" y="352" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="4" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7mX-Fs-Lgc"/>
+                                    <constraint firstAttribute="height" constant="60" id="ds9-HJ-Odf"/>
+                                </constraints>
+                                <state key="normal" title="4" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -373,10 +561,14 @@
                                     <action selector="moveTile:" destination="AaJ-Ve-xjK" eventType="touchUpInside" id="SQa-uB-OZV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-bx-msL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTA-bx-msL">
                                 <rect key="frame" x="96" y="352" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="5" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8bP-H6-4Ug"/>
+                                    <constraint firstAttribute="height" constant="60" id="myC-tf-Ozd"/>
+                                </constraints>
+                                <state key="normal" title="5" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -385,10 +577,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Vu7-iC-Tb5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r4-eO-WVg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r4-eO-WVg">
                                 <rect key="frame" x="164" y="352" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="6" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="d9V-e6-buO"/>
+                                    <constraint firstAttribute="height" constant="60" id="mcm-Us-X72"/>
+                                </constraints>
+                                <state key="normal" title="6" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -397,10 +593,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="vAR-60-IKv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhl-ZT-sIW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhl-ZT-sIW">
                                 <rect key="frame" x="232" y="352" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="7" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4GQ-Ja-snP"/>
+                                    <constraint firstAttribute="height" constant="60" id="Hl0-cM-hhY"/>
+                                </constraints>
+                                <state key="normal" title="7" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -409,10 +609,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="J9c-FE-zsu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxV-pJ-8rN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxV-pJ-8rN">
                                 <rect key="frame" x="28" y="420" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="8" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Odu-Fd-qA9"/>
+                                    <constraint firstAttribute="width" constant="60" id="vA1-6S-q1X"/>
+                                </constraints>
+                                <state key="normal" title="8" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -421,10 +625,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Gdz-Du-i4T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-PN-8Jo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-PN-8Jo">
                                 <rect key="frame" x="96" y="420" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="9" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NPq-hc-gWX"/>
+                                    <constraint firstAttribute="width" constant="60" id="WaF-Wd-kzh"/>
+                                </constraints>
+                                <state key="normal" title="9" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -433,10 +641,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="Zpb-md-pfe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53k-2R-L8y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53k-2R-L8y">
                                 <rect key="frame" x="164" y="420" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="10" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MMA-Qz-M90"/>
+                                    <constraint firstAttribute="width" constant="60" id="uoS-gW-ykc"/>
+                                </constraints>
+                                <state key="normal" title="10" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -445,10 +657,14 @@
                                     <action selector="moveTile:" destination="AaJ-Ve-xjK" eventType="touchUpInside" id="bHQ-kt-5Dr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-cd-K3G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-cd-K3G">
                                 <rect key="frame" x="232" y="420" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="11" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="9WZ-Ha-84e"/>
+                                    <constraint firstAttribute="height" constant="60" id="TmN-5v-5uC"/>
+                                </constraints>
+                                <state key="normal" title="11" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -457,10 +673,14 @@
                                     <action selector="moveTile:" destination="AaJ-Ve-xjK" eventType="touchUpInside" id="sn2-aP-7x8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1h-Y1-zbO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1h-Y1-zbO">
                                 <rect key="frame" x="28" y="488" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="12" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2qg-Zn-2Qp"/>
+                                    <constraint firstAttribute="width" constant="60" id="cHH-Ek-rbM"/>
+                                </constraints>
+                                <state key="normal" title="12" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -469,10 +689,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="t7t-vv-F50"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-Jj-pU8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-Jj-pU8">
                                 <rect key="frame" x="96" y="488" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="13" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Jkm-5O-WT9"/>
+                                    <constraint firstAttribute="height" constant="60" id="kDX-PG-zbz"/>
+                                </constraints>
+                                <state key="normal" title="13" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -481,10 +705,14 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="jhh-hI-br2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-Su-ME7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-Su-ME7">
                                 <rect key="frame" x="164" y="488" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="14" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="OOg-02-Jvb"/>
+                                    <constraint firstAttribute="height" constant="60" id="d0e-IV-6B2"/>
+                                </constraints>
+                                <state key="normal" title="14" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -493,10 +721,14 @@
                                     <action selector="moveTile:" destination="AaJ-Ve-xjK" eventType="touchUpInside" id="o1Z-pZ-cTu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7J-PM-ajT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7J-PM-ajT">
                                 <rect key="frame" x="232" y="488" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="15" backgroundImage="blue60x60.png">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3XX-KD-KtP"/>
+                                    <constraint firstAttribute="width" constant="60" id="HGt-NU-sZX"/>
+                                </constraints>
+                                <state key="normal" title="15" backgroundImage="tile_1.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -505,23 +737,85 @@
                                     <action selector="moveTile:" destination="2" eventType="touchUpInside" id="4is-kQ-iVJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMt-Dl-Wlu">
-                                <rect key="frame" x="20" y="68" width="101" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMt-Dl-Wlu">
+                                <rect key="frame" x="20" y="111" width="280" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="ovV-tt-MXR"/>
+                                    <constraint firstAttribute="height" constant="25" id="tKJ-23-sne"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.40000000596046448" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="U" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-kf-g5s">
-                                <rect key="frame" x="20" y="110" width="257" height="99"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="U" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-kf-g5s">
+                                <rect key="frame" x="20" y="144" width="280" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Gan-XP-0vw"/>
+                                    <constraint firstAttribute="width" constant="280" id="hOq-z0-85M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.40000000596046448" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JZk-un-P6i" firstAttribute="top" secondItem="t1h-Y1-zbO" secondAttribute="bottom" constant="20" id="0NS-nc-LHt"/>
+                            <constraint firstItem="gTA-bx-msL" firstAttribute="leading" secondItem="SjM-HY-Gne" secondAttribute="trailing" constant="8" id="1Bv-xm-Tb8"/>
+                            <constraint firstItem="JZk-un-P6i" firstAttribute="top" secondItem="Zcx-Su-ME7" secondAttribute="bottom" constant="20" id="1UY-Ae-FA3"/>
+                            <constraint firstItem="Zcx-Su-ME7" firstAttribute="leading" secondItem="KQE-Jj-pU8" secondAttribute="trailing" constant="8" id="1wT-6S-QkY"/>
+                            <constraint firstItem="7hS-zq-cbP" firstAttribute="top" secondItem="cRi-ue-3GR" secondAttribute="bottom" id="228-iE-LuY"/>
+                            <constraint firstItem="FMt-Dl-Wlu" firstAttribute="leading" secondItem="PJW-kf-g5s" secondAttribute="leading" id="2xD-hu-E7e"/>
+                            <constraint firstItem="JxV-pJ-8rN" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" constant="28" id="379-Qy-hWu"/>
+                            <constraint firstItem="gTA-bx-msL" firstAttribute="top" secondItem="PKh-h8-pcj" secondAttribute="bottom" constant="8" id="5G8-pb-SSc"/>
+                            <constraint firstItem="vhl-ZT-sIW" firstAttribute="top" secondItem="pyE-ox-Ijm" secondAttribute="bottom" constant="8" id="5yp-2R-Lbt"/>
+                            <constraint firstItem="Z7J-PM-ajT" firstAttribute="leading" secondItem="Zcx-Su-ME7" secondAttribute="trailing" constant="8" id="8S4-3G-dOl"/>
+                            <constraint firstItem="jNt-3w-Jav" firstAttribute="height" secondItem="7hS-zq-cbP" secondAttribute="height" id="BTV-Iv-6WI"/>
+                            <constraint firstItem="PJW-kf-g5s" firstAttribute="top" secondItem="FMt-Dl-Wlu" secondAttribute="bottom" constant="8" symbolic="YES" id="DSE-I2-pJS"/>
+                            <constraint firstItem="7hS-zq-cbP" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" constant="20" id="GTS-YC-z2w"/>
+                            <constraint firstItem="AbI-cd-K3G" firstAttribute="leading" secondItem="53k-2R-L8y" secondAttribute="trailing" constant="8" id="HD3-pK-9N5"/>
+                            <constraint firstItem="SjM-HY-Gne" firstAttribute="top" secondItem="MKa-aU-ib6" secondAttribute="bottom" constant="8" id="Iz4-cW-5bv"/>
+                            <constraint firstAttribute="trailing" secondItem="VKA-b5-BfI" secondAttribute="trailing" id="JLc-xc-gbp"/>
+                            <constraint firstItem="Z7J-PM-ajT" firstAttribute="top" secondItem="AbI-cd-K3G" secondAttribute="bottom" constant="8" id="Kv9-He-u0I"/>
+                            <constraint firstItem="pyE-ox-Ijm" firstAttribute="leading" secondItem="z65-kB-RLK" secondAttribute="trailing" constant="8" id="M7c-6r-JWY"/>
+                            <constraint firstItem="JZk-un-P6i" firstAttribute="top" secondItem="KQE-Jj-pU8" secondAttribute="bottom" constant="20" id="Ntq-gl-UC9"/>
+                            <constraint firstItem="jNt-3w-Jav" firstAttribute="width" secondItem="7hS-zq-cbP" secondAttribute="width" id="RQk-Jv-nOn"/>
+                            <constraint firstAttribute="trailing" secondItem="pyE-ox-Ijm" secondAttribute="trailing" constant="28" id="T1Z-Tg-y1L"/>
+                            <constraint firstItem="PJW-kf-g5s" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" constant="20" id="T3g-th-bU6"/>
+                            <constraint firstItem="KQE-Jj-pU8" firstAttribute="top" secondItem="lnf-PN-8Jo" secondAttribute="bottom" constant="8" id="ThY-xd-kGV"/>
+                            <constraint firstItem="FMt-Dl-Wlu" firstAttribute="trailing" secondItem="PJW-kf-g5s" secondAttribute="trailing" id="U37-ss-acC"/>
+                            <constraint firstItem="jNt-3w-Jav" firstAttribute="top" secondItem="cRi-ue-3GR" secondAttribute="bottom" id="VAe-8d-2la"/>
+                            <constraint firstItem="t1h-Y1-zbO" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" constant="28" id="VMv-0m-ipL"/>
+                            <constraint firstItem="9r4-eO-WVg" firstAttribute="top" secondItem="z65-kB-RLK" secondAttribute="bottom" constant="8" id="VuI-a5-hEj"/>
+                            <constraint firstAttribute="trailing" secondItem="vhl-ZT-sIW" secondAttribute="trailing" constant="28" id="ZCM-RV-Few"/>
+                            <constraint firstItem="FMt-Dl-Wlu" firstAttribute="top" secondItem="jNt-3w-Jav" secondAttribute="bottom" constant="41" id="ZQw-iq-DmE"/>
+                            <constraint firstItem="t1h-Y1-zbO" firstAttribute="top" secondItem="JxV-pJ-8rN" secondAttribute="bottom" constant="8" id="aU2-II-Fyk"/>
+                            <constraint firstItem="PKh-h8-pcj" firstAttribute="leading" secondItem="MKa-aU-ib6" secondAttribute="trailing" constant="8" id="alh-v0-Dtg"/>
+                            <constraint firstItem="53k-2R-L8y" firstAttribute="top" secondItem="9r4-eO-WVg" secondAttribute="bottom" constant="8" id="bfd-52-0JW"/>
+                            <constraint firstAttribute="trailing" secondItem="Z7J-PM-ajT" secondAttribute="trailing" constant="28" id="crU-qL-hRk"/>
+                            <constraint firstItem="VKA-b5-BfI" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" id="fBv-jM-cjR"/>
+                            <constraint firstItem="z65-kB-RLK" firstAttribute="leading" secondItem="PKh-h8-pcj" secondAttribute="trailing" constant="8" id="g4q-61-MbW"/>
+                            <constraint firstItem="JZk-un-P6i" firstAttribute="top" secondItem="Z7J-PM-ajT" secondAttribute="bottom" constant="20" id="g7p-Ez-YeY"/>
+                            <constraint firstItem="jNt-3w-Jav" firstAttribute="leading" secondItem="7hS-zq-cbP" secondAttribute="trailing" constant="180" id="gBq-j7-Lb5"/>
+                            <constraint firstAttribute="trailing" secondItem="AbI-cd-K3G" secondAttribute="trailing" constant="28" id="i7j-qj-tB7"/>
+                            <constraint firstAttribute="trailing" secondItem="PJW-kf-g5s" secondAttribute="trailing" constant="20" id="iTL-jL-RZe"/>
+                            <constraint firstItem="AbI-cd-K3G" firstAttribute="top" secondItem="vhl-ZT-sIW" secondAttribute="bottom" constant="8" id="j0u-4J-2VN"/>
+                            <constraint firstAttribute="trailing" secondItem="jNt-3w-Jav" secondAttribute="trailing" constant="20" id="kn0-Yj-d1V"/>
+                            <constraint firstItem="lnf-PN-8Jo" firstAttribute="top" secondItem="gTA-bx-msL" secondAttribute="bottom" constant="8" id="meQ-UH-3uh"/>
+                            <constraint firstItem="vhl-ZT-sIW" firstAttribute="leading" secondItem="9r4-eO-WVg" secondAttribute="trailing" constant="8" id="nf1-ad-ebM"/>
+                            <constraint firstItem="JZk-un-P6i" firstAttribute="top" secondItem="VKA-b5-BfI" secondAttribute="bottom" id="pyH-NZ-4ui"/>
+                            <constraint firstItem="KQE-Jj-pU8" firstAttribute="leading" secondItem="t1h-Y1-zbO" secondAttribute="trailing" constant="8" id="r5h-HB-qNy"/>
+                            <constraint firstItem="53k-2R-L8y" firstAttribute="leading" secondItem="lnf-PN-8Jo" secondAttribute="trailing" constant="8" id="umg-Ft-EQP"/>
+                            <constraint firstItem="9r4-eO-WVg" firstAttribute="leading" secondItem="gTA-bx-msL" secondAttribute="trailing" constant="8" id="vIt-hw-QQK"/>
+                            <constraint firstItem="Zcx-Su-ME7" firstAttribute="top" secondItem="53k-2R-L8y" secondAttribute="bottom" constant="8" id="xJG-0h-zen"/>
+                            <constraint firstItem="lnf-PN-8Jo" firstAttribute="leading" secondItem="JxV-pJ-8rN" secondAttribute="trailing" constant="8" id="xPL-Fm-uVM"/>
+                            <constraint firstItem="SjM-HY-Gne" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" constant="28" id="xW7-K4-2BS"/>
+                            <constraint firstItem="MKa-aU-ib6" firstAttribute="leading" secondItem="gYX-oT-tab" secondAttribute="leading" constant="28" id="yO8-Mc-9F6"/>
+                            <constraint firstItem="JxV-pJ-8rN" firstAttribute="top" secondItem="SjM-HY-Gne" secondAttribute="bottom" constant="8" id="zyg-sq-Z3W"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="moves" destination="FMt-Dl-Wlu" id="rkw-oq-U85"/>
@@ -610,20 +904,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-ay-qah">
+                            <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-ay-qah">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNn-QT-fOi" userLabel="Text Background Image">
-                                <rect key="frame" x="20" y="375" width="280" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZNn-QT-fOi" userLabel="Text Background Image">
+                                <rect key="frame" x="20" y="448" width="280" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bpR-Qn-owT"/>
+                                    <constraint firstAttribute="width" constant="280" id="tEi-fi-fta"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d1-wM-wKC">
-                                <rect key="frame" x="258" y="43" width="42" height="38"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0l-tY-2rO">
+                                <rect key="frame" x="20" y="448" width="280" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="M6p-H6-zEw"/>
+                                    <constraint firstAttribute="width" constant="280" id="Vka-9I-cG9"/>
+                                </constraints>
+                                <string key="text">Touch a tile next to the empty tile to swap spaces. When all of the numbers are in order and the empty tile is in the lower right tile location you have solved the board.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d1-wM-wKC">
+                                <rect key="frame" x="250" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5k1-pY-hvz"/>
+                                    <constraint firstAttribute="height" constant="50" id="MCz-EO-dvB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <state key="normal" title="X" backgroundImage="blue60x60.png">
+                                <state key="normal" backgroundImage="exit.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -631,25 +945,38 @@
                                     <action selector="hideHelpScreen:" destination="1mA-zK-FJD" eventType="touchUpInside" id="Jwb-SJ-4cl"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0l-tY-2rO">
-                                <rect key="frame" x="20" y="453" width="280" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Touch a tile next to the empty tile to swap spaces. When all of the numbers are in order and the empty tile in the lower right location you have solved the board.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbP-pT-MwU" userLabel="Animation">
-                                <rect key="frame" x="60" y="152" width="200" height="265"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gbP-pT-MwU" userLabel="Animation">
+                                <rect key="frame" x="60" y="184" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7Vw-7e-q9T"/>
+                                    <constraint firstAttribute="height" constant="200" id="eCe-rO-mff"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZNn-QT-fOi" firstAttribute="height" secondItem="W0l-tY-2rO" secondAttribute="height" id="07T-vM-obu"/>
+                            <constraint firstAttribute="bottom" secondItem="ZNn-QT-fOi" secondAttribute="bottom" constant="20" symbolic="YES" id="1eu-kd-h0Z"/>
+                            <constraint firstItem="W0l-tY-2rO" firstAttribute="leading" secondItem="ZNn-QT-fOi" secondAttribute="leading" id="2zt-SI-6nt"/>
+                            <constraint firstItem="ZNn-QT-fOi" firstAttribute="width" secondItem="W0l-tY-2rO" secondAttribute="width" id="9ui-vc-STg"/>
+                            <constraint firstItem="fzc-ay-qah" firstAttribute="centerX" secondItem="W0l-tY-2rO" secondAttribute="centerX" id="BiD-3Y-c4X"/>
+                            <constraint firstItem="ZNn-QT-fOi" firstAttribute="bottom" secondItem="W0l-tY-2rO" secondAttribute="bottom" id="GOe-gt-rpX"/>
+                            <constraint firstItem="fzc-ay-qah" firstAttribute="centerY" secondItem="gbP-pT-MwU" secondAttribute="centerY" id="Odd-qw-A78"/>
+                            <constraint firstItem="ZNn-QT-fOi" firstAttribute="leading" secondItem="Jf0-52-HCk" secondAttribute="leading" constant="20" symbolic="YES" id="VlQ-yM-1u7"/>
+                            <constraint firstAttribute="centerY" secondItem="gbP-pT-MwU" secondAttribute="centerY" id="eEB-iQ-7HH"/>
+                            <constraint firstItem="fzc-ay-qah" firstAttribute="top" secondItem="Jf0-52-HCk" secondAttribute="top" id="ehU-zN-T2V"/>
+                            <constraint firstItem="fzc-ay-qah" firstAttribute="leading" secondItem="Jf0-52-HCk" secondAttribute="leading" id="g6X-Mn-xu4"/>
+                            <constraint firstItem="1d1-wM-wKC" firstAttribute="top" secondItem="Jf0-52-HCk" secondAttribute="top" constant="20" symbolic="YES" id="mhd-sx-brF"/>
+                            <constraint firstItem="gbP-pT-MwU" firstAttribute="centerX" secondItem="ZNn-QT-fOi" secondAttribute="centerX" id="t30-yp-kcN"/>
+                            <constraint firstItem="1d1-wM-wKC" firstAttribute="trailing" secondItem="W0l-tY-2rO" secondAttribute="trailing" id="wJF-xb-A2F"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="sliderHelpImages" destination="gbP-pT-MwU" id="Ui3-SV-DB1"/>
                         <outlet property="textBackgroundImage" destination="ZNn-QT-fOi" id="Nga-Yw-Qw9"/>
                     </connections>
                 </viewController>
@@ -659,9 +986,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blue60x60.png" width="60" height="60"/>
+        <image name="back.png" width="500" height="500"/>
+        <image name="back1_s.png" width="640" height="1136"/>
+        <image name="back2_s.png" width="640" height="1136"/>
+        <image name="exit.png" width="500" height="500"/>
         <image name="grey72x43.png" width="72" height="43"/>
-        <image name="red60x60.png" width="60" height="60"/>
+        <image name="help.png" width="500" height="500"/>
+        <image name="reset.png" width="500" height="500"/>
+        <image name="tile_1.png" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

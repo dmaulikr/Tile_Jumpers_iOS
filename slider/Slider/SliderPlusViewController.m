@@ -29,17 +29,17 @@
     int i = 0;
     for (UIButton *tileButton in self.tileButtons) {
         [tileButton setTitle:[Board validValues][0] forState:UIControlStateSelected];
-        [tileButton setTitle:[Board validValues][0] forState:UIControlStateNormal];
+ //       [tileButton setTitle:[Board validValues][0] forState:UIControlStateNormal];
         
-        [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
+ //       [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
 
         if(self.board.transport_two == i || self.board.transport_one == i) {
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateSelected];
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateNormal];
+//            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_2.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_2.png"] forState:UIControlStateNormal];
         } else {
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateSelected];
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateNormal];
+//            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_1.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_1.png"] forState:UIControlStateNormal];
         }
         i++;
     }
@@ -56,11 +56,11 @@
             [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
             [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
             if(self.board.transport_two == i || self.board.transport_one == i) {
-                [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateSelected];
-                [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateNormal];
+ //               [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_2.png"] forState:UIControlStateSelected];
+                [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_2.png"] forState:UIControlStateNormal];
             } else {
-                [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateSelected];
-                [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateNormal];
+ //               [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_1.png"] forState:UIControlStateSelected];
+                [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_1.png"] forState:UIControlStateNormal];
             }
             i++;
         }
@@ -87,11 +87,11 @@
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
  
         if(self.board.transport_two == i || self.board.transport_one == i) {
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateSelected];
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"red60x60.png"] forState:UIControlStateNormal];
+//            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_2.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_2.png"] forState:UIControlStateNormal];
         } else {
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateSelected];
-            [tileButton setBackgroundImage:[UIImage imageNamed:@"blue60x60.png"] forState:UIControlStateNormal];
+//            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_1.png"] forState:UIControlStateSelected];
+            [tileButton setBackgroundImage:[UIImage imageNamed:@"tile_1.png"] forState:UIControlStateNormal];
         }
         i++;
     }
@@ -106,9 +106,9 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
+//    if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
         
-    }
+//    }
     
 }
 

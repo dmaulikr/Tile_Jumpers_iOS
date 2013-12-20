@@ -17,10 +17,21 @@
 @property (strong, nonatomic) IBOutlet UIView *sliderHelpView;
 @property (strong, nonatomic) Board *board;
 @property (strong, nonatomic) SliderHelpViewController *sliderHelpViewController;
+@property (nonatomic) NSTimeInterval startTime;
+@property (nonatomic) NSTimeInterval endTime;
+@property (weak, nonatomic) IBOutlet UIButton *sliderBackButton;
+@property (weak, nonatomic) IBOutlet UIImageView *sliderBackground;
+@property (weak, nonatomic) IBOutlet UIView *sliderContainer;
+@property (weak, nonatomic) IBOutlet UIButton *sliderReset;
+@property (weak, nonatomic) IBOutlet UIButton *sliderHelp;
 
 @end
 
 @implementation SliderViewController
+
+- (IBAction)backButtonPress:(UIButton *)sender {
+
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -38,10 +49,8 @@
     self.board = nil;
     int i = 0;
     for (UIButton *tileButton in self.tileButtons) {
-        [tileButton setTitle:[Board validValues][0] forState:UIControlStateSelected];
         [tileButton setTitle:[Board validValues][0] forState:UIControlStateNormal];
         
-        [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
         i++;
     }
@@ -55,7 +64,6 @@
     if([self.board moveSliderBasic: sender.currentTitle]) {
         NSInteger i=0;
         for (UIButton *tileButton in self.tileButtons) {
-            [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
             [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
             i++;
         }
@@ -64,8 +72,10 @@
 }
 
 - (Board *) board {
-    if (!_board)
-       _board = [[Board alloc]init];
+    if (!_board) {
+        _board = [[Board alloc]init];
+        self.startTime = [NSDate timeIntervalSinceReferenceDate];
+    }
     
     return _board;
 }
@@ -75,7 +85,6 @@
 
     _tileButtons = tileButtons;
     for (UIButton *tileButton in tileButtons) {
-        [tileButton setTitle:self.board.current[i] forState:UIControlStateSelected];
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
         i++;
     }
@@ -97,8 +106,18 @@
 - (void) updateLabels {
     self.moves.text = [NSString stringWithFormat: @"Moves: %d", self.board.moves];
     
-    if ([self.board solved] == TRUE)
-        self.solved.text = @"Solved!";
+    if ([self.board solved] == TRUE) {
+        self.endTime = [NSDate timeIntervalSinceReferenceDate];
+        NSInteger solveTime = self.endTime - self.startTime;
+        if (solveTime > 9999) {
+            solveTime = 9999;
+        }
+        if (solveTime == 9999) {
+            self.solved.text = @"Solved!";
+        } else {
+            self.solved.text = [NSString stringWithFormat: @"Solved in %d seconds!", solveTime];
+        }
+    }
     else
         self.solved.text = @"";
     

@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *textBackgroundImage;
 @property (strong,nonatomic) NSString *textBackgroundImageFile;
+@property (strong, nonatomic) IBOutlet UIImageView *sliderHelpImages;
 
 @end
 
@@ -19,9 +20,6 @@
 
 - (IBAction)hideHelpScreen:(id)sender {
     self.view.superview.hidden=true;
-    [self.textBackgroundImage setImage:nil];
-    
-
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,6 +36,19 @@
     self.textBackgroundImageFile = @"white280x100.png";
     [self.textBackgroundImage setImage:[UIImage imageNamed:self.textBackgroundImageFile]];
     
+    NSArray *imageNames = @[@"sliderhelp1.png", @"sliderhelp2.png", @"sliderhelp3.png",
+                            @"sliderhelp4.png", @"sliderhelp5.png", @"sliderhelp6.png"];
+
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    
+     for (int i = 0; i < imageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+    }
+    self.sliderHelpImages.animationImages = images;
+    self.sliderHelpImages.animationDuration = 5;
+    [self.view addSubview:self.sliderHelpImages];
+    [self.sliderHelpImages startAnimating];
+
     return true;
 }
 
@@ -45,6 +56,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
