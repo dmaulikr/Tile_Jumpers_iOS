@@ -98,7 +98,7 @@
 		301F32D01862D74100AEF08C /* back1_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1_s.png; sourceTree = "<group>"; };
 		301F32D11862D74100AEF08C /* back2_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2_s.png; sourceTree = "<group>"; };
 		301F32D21862D74100AEF08C /* back3_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3_s.png; sourceTree = "<group>"; };
-		301F32D31862D74100AEF08C /* back4_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back4_s.png; sourceTree = "<group>"; };
+		301F32D31862D74100AEF08C /* back4_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back4_s.png; path = Images/back4_s.png; sourceTree = SOURCE_ROOT; };
 		301F32D41862D74100AEF08C /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit.png; sourceTree = "<group>"; };
 		301F32D51862D74100AEF08C /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		301F32D61862D74100AEF08C /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };

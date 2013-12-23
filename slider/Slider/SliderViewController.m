@@ -5,7 +5,6 @@
 //  Created by Monte Jeu on 9/27/13.
 //  Copyright (c) 2013 Monte Jeu. All rights reserved.
 //
-
 #import "SliderViewController.h"
 #import "SliderHelpViewController.h"
 #import "Board.h"
@@ -19,19 +18,14 @@
 @property (strong, nonatomic) SliderHelpViewController *sliderHelpViewController;
 @property (nonatomic) NSTimeInterval startTime;
 @property (nonatomic) NSTimeInterval endTime;
-@property (weak, nonatomic) IBOutlet UIButton *sliderBackButton;
-@property (weak, nonatomic) IBOutlet UIImageView *sliderBackground;
-@property (weak, nonatomic) IBOutlet UIView *sliderContainer;
-@property (weak, nonatomic) IBOutlet UIButton *sliderReset;
-@property (weak, nonatomic) IBOutlet UIButton *sliderHelp;
+@property (strong, nonatomic) IBOutlet UIImageView *sliderBackground;
+@property (strong, nonatomic) IBOutlet UIButton *sliderBackButton;
+@property (strong, nonatomic) IBOutlet UIButton *sliderResetButton;
+@property (strong, nonatomic) IBOutlet UIButton *sliderHelpButton;
 
 @end
 
 @implementation SliderViewController
-
-- (IBAction)backButtonPress:(UIButton *)sender {
-
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -93,8 +87,17 @@
 
 - (void)viewDidLoad
 {
-    [self updateLabels];
 
+    [self updateLabels];
+    self.sliderBackground.image=[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"back1_s" ofType:@"png"]];
+    [self.sliderBackButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"back" ofType:@"png"]] forState:UIControlStateNormal];
+    [self.sliderResetButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"reset" ofType:@"png"]] forState:UIControlStateNormal];
+    [self.sliderHelpButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"help" ofType:@"png"]] forState:UIControlStateNormal];
+    for (UIButton *tileButton in self.tileButtons) {
+        [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_1" ofType:@"png"]] forState:UIControlStateNormal];
+    }
+
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
