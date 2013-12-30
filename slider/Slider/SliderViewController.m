@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *sliderBackButton;
 @property (strong, nonatomic) IBOutlet UIButton *sliderResetButton;
 @property (strong, nonatomic) IBOutlet UIButton *sliderHelpButton;
+@property (weak, nonatomic) IBOutlet UILabel *highscoretext;
+@property (weak, nonatomic) IBOutlet UIImageView *highscorebackground;
 
 @end
 
@@ -49,6 +51,8 @@
         i++;
     }
     [self updateLabels];
+    self.highscorebackground.hidden=true;
+    self.highscoretext.hidden=true;
 }
 
 - (IBAction)moveTile:(UIButton *)sender {
@@ -96,22 +100,22 @@
     for (UIButton *tileButton in self.tileButtons) {
         [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_1" ofType:@"png"]] forState:UIControlStateNormal];
     }
-
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
+//    if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
         
-    }
+//    }
     
 }
 
 - (void) updateLabels {
     self.moves.text = [NSString stringWithFormat: @"Moves: %d", self.board.moves];
+    NSInteger solveTime;
     
     if ([self.board solved] == TRUE) {
         self.endTime = [NSDate timeIntervalSinceReferenceDate];
-        NSInteger solveTime = self.endTime - self.startTime;
+        solveTime = self.endTime - self.startTime;
         if (solveTime > 9999) {
             solveTime = 9999;
         }
@@ -120,9 +124,102 @@
         } else {
             self.solved.text = [NSString stringWithFormat: @"Solved in %d seconds!", solveTime];
         }
+        NSString *mydata = [self saveFilePath];
+        NSMutableArray *values;
+        
+        BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:mydata];
+        BOOL datavalid=true;
+        NSInteger i;
+        NSInteger tempnum;
+        NSNumber *num;
+        NSInteger time = solveTime;
+        
+        if (fileExists) {
+            values = [[NSMutableArray alloc] initWithContentsOfFile:mydata];
+        } else {
+            datavalid=false;
+        }
+
+        
+        if ([values count] != 6)
+        {
+            datavalid=false;
+        } else {
+            for (i=0; i<6; i++) {
+                if (![[values objectAtIndex:i]isKindOfClass: [NSNumber class]]  ) {
+                    datavalid=false;
+                } else {
+                    num = [values objectAtIndex:i];
+                    if ([num intValue] < 1 || [num intValue] > 9999) {
+                        datavalid=false;
+                    }
+                    
+                }
+            }
+        }
+        if (datavalid==false)
+        {
+            values = [[NSMutableArray alloc] init];
+            for (i=0; i<6; i++) {
+                [values addObject:[NSNumber numberWithInt:9999]];
+            }
+        }
+        
+        
+        for (i=0; i<3; i++ ) {
+            num = [values objectAtIndex:i];
+            if (time < [num intValue]) {
+                tempnum = [num intValue];
+                [values replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:time]];
+                time = tempnum;
+            }
+        }
+        
+        NSInteger moves = self.board.moves;
+        if (moves > 9999) {
+            moves = 9999;
+        }
+        
+        for (i=3; i<6; i++) {
+            num = [values objectAtIndex:i];
+            if (moves < [num intValue]) {
+                tempnum = [num intValue];
+                [values replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:moves]];
+                moves = tempnum;
+            }
+        }
+        [values writeToFile:[self saveFilePath] atomically:YES];
+    
+        for (i=0; i<6; i++) {
+            num = [values objectAtIndex:i];
+            if ([num intValue] == 9999) {
+                [values replaceObjectAtIndex:i withObject:@""];
+            }
+        }
+        
+        self.highscoretext.text = [NSString stringWithFormat: @"Best times:\n   %@ seconds\n   %@ seconds\n   %@ seconds\nBest Moves:\n   %@ moves\n   %@ moves\n   %@ moves",
+                                   [values objectAtIndex:0],
+                                   [values objectAtIndex:1],
+                                   [values objectAtIndex:2],
+                                   [values objectAtIndex:3],
+                                   [values objectAtIndex:4],
+                                   [values objectAtIndex:5]];
+        self.highscorebackground.image=[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"highscorebackground" ofType:@"png"]];
+        self.highscorebackground.hidden=false;
+        self.highscoretext.hidden=false;
+      
     }
     else
         self.solved.text = @"";
+    
+}
+
+- (NSString *) saveFilePath
+{
+	NSArray *path =
+	NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+	return [[path objectAtIndex:0] stringByAppendingPathComponent:@"sliderbasic.plist"];
     
 }
 

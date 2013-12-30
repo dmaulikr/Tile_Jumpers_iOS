@@ -1,15 +1,14 @@
 //
-//  SliderHelpViewController.m
+//  SliderNextHelpViewController.m
 //  Slider
 //
-//  Created by Monte Jeu on 11/24/13.
+//  Created by Monte Christopher Jeu on 12/28/13.
 //  Copyright (c) 2013 Monte Jeu. All rights reserved.
 //
 
-#import "SliderHelpViewController.h"
+#import "SliderNextHelpViewController.h"
 
-@interface SliderHelpViewController ()
-
+@interface SliderNextHelpViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *textBackgroundImage;
 @property (strong,nonatomic) NSString *textBackgroundImageFile;
 @property (strong, nonatomic) IBOutlet UIImageView *sliderHelpImages;
@@ -17,7 +16,7 @@
 
 @end
 
-@implementation SliderHelpViewController
+@implementation SliderNextHelpViewController
 
 - (IBAction)hideHelpScreen:(id)sender {
     self.view.superview.hidden=true;
@@ -32,16 +31,15 @@
     if (self) {
         // Custom initialization
     }
-    
     return self;
 }
 
 -(BOOL) loadImages {
     [self.textBackgroundImage setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"sliderhelptextbackground" ofType:@"png"]]];
-
+    
     NSArray *imageNames = @[@"sliderhelp1", @"sliderhelp2", @"sliderhelp3",
                             @"sliderhelp4", @"sliderhelp5"];
-
+    
     NSMutableArray *images = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < imageNames.count; i++) {
@@ -52,7 +50,7 @@
     [self.view addSubview:self.sliderHelpImages];
     [self.sliderHelpImages startAnimating];
     
-
+    
     [self.sliderhelpexitbutton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"exit" ofType:@"png"]] forState:UIControlStateNormal];
     [self.view bringSubviewToFront:self.sliderhelpexitbutton];
     
@@ -63,9 +61,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning

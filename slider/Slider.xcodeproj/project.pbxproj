@@ -41,10 +41,13 @@
 		301F32EC1862D74100AEF08C /* sliderhelp3.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32DA1862D74100AEF08C /* sliderhelp3.png */; };
 		301F32ED1862D74100AEF08C /* sliderhelp4.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32DB1862D74100AEF08C /* sliderhelp4.png */; };
 		301F32EE1862D74100AEF08C /* sliderhelp5.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32DC1862D74100AEF08C /* sliderhelp5.png */; };
-		301F32EF1862D74100AEF08C /* sliderhelp6.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32DD1862D74100AEF08C /* sliderhelp6.png */; };
 		301F32F01862D74100AEF08C /* tile_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32DE1862D74100AEF08C /* tile_1.png */; };
 		301F32F11862D74100AEF08C /* tile_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32DF1862D74100AEF08C /* tile_2.png */; };
 		301F32F21862D74100AEF08C /* tile_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 301F32E01862D74100AEF08C /* tile_3.png */; };
+		3026F5CC186959010003452C /* sliderhelptextbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3026F5CB186959010003452C /* sliderhelptextbackground.png */; };
+		3026F5D2186AACD50003452C /* SliderPlusHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026F5D1186AACD50003452C /* SliderPlusHelpViewController.m */; };
+		3026F5D5186BCF000003452C /* sliderplushelp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3026F5D3186BCF000003452C /* sliderplushelp1.png */; };
+		3026F5D6186BCF000003452C /* sliderplushelp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3026F5D4186BCF000003452C /* sliderplushelp2.png */; };
 		303576C6184B0ACF00AD9828 /* white60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 303576C5184B0ACF00AD9828 /* white60x60.png */; };
 		303576C8184B217200AD9828 /* white280x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 303576C7184B217200AD9828 /* white280x100.png */; };
 		309F9D07181FAC6900FFDBAA /* grey72x43.png in Resources */ = {isa = PBXBuildFile; fileRef = 309F9D06181FAC6900FFDBAA /* grey72x43.png */; };
@@ -52,6 +55,9 @@
 		30B390FF181F96780049E370 /* blue60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B390FE181F96780049E370 /* blue60x60.png */; };
 		30E9E7A518387F2C009E9B74 /* SliderPlusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9E7A418387F2C009E9B74 /* SliderPlusViewController.m */; };
 		30E9E7A7183891C3009E9B74 /* red60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E9E7A6183891C3009E9B74 /* red60x60.png */; };
+		30F58010186FE6E200C036A7 /* highscorebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 30F5800F186FE6E200C036A7 /* highscorebackground.png */; };
+		30F580131870040900C036A7 /* SliderNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F580121870040900C036A7 /* SliderNextViewController.m */; };
+		30F580161870048300C036A7 /* SliderNextHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F580151870048300C036A7 /* SliderNextHelpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,10 +114,14 @@
 		301F32DA1862D74100AEF08C /* sliderhelp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderhelp3.png; sourceTree = "<group>"; };
 		301F32DB1862D74100AEF08C /* sliderhelp4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderhelp4.png; sourceTree = "<group>"; };
 		301F32DC1862D74100AEF08C /* sliderhelp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderhelp5.png; sourceTree = "<group>"; };
-		301F32DD1862D74100AEF08C /* sliderhelp6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderhelp6.png; sourceTree = "<group>"; };
 		301F32DE1862D74100AEF08C /* tile_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile_1.png; sourceTree = "<group>"; };
 		301F32DF1862D74100AEF08C /* tile_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile_2.png; sourceTree = "<group>"; };
 		301F32E01862D74100AEF08C /* tile_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile_3.png; sourceTree = "<group>"; };
+		3026F5CB186959010003452C /* sliderhelptextbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderhelptextbackground.png; path = Images/sliderhelptextbackground.png; sourceTree = SOURCE_ROOT; };
+		3026F5D0186AACD50003452C /* SliderPlusHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderPlusHelpViewController.h; sourceTree = "<group>"; };
+		3026F5D1186AACD50003452C /* SliderPlusHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderPlusHelpViewController.m; sourceTree = "<group>"; };
+		3026F5D3186BCF000003452C /* sliderplushelp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderplushelp1.png; path = Images/sliderplushelp1.png; sourceTree = SOURCE_ROOT; };
+		3026F5D4186BCF000003452C /* sliderplushelp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderplushelp2.png; path = Images/sliderplushelp2.png; sourceTree = SOURCE_ROOT; };
 		303576C5184B0ACF00AD9828 /* white60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white60x60.png; sourceTree = SOURCE_ROOT; };
 		303576C7184B217200AD9828 /* white280x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white280x100.png; sourceTree = SOURCE_ROOT; };
 		309F9D06181FAC6900FFDBAA /* grey72x43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey72x43.png; sourceTree = SOURCE_ROOT; };
@@ -121,6 +131,11 @@
 		30E9E7A318387F2C009E9B74 /* SliderPlusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderPlusViewController.h; sourceTree = "<group>"; };
 		30E9E7A418387F2C009E9B74 /* SliderPlusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderPlusViewController.m; sourceTree = "<group>"; };
 		30E9E7A6183891C3009E9B74 /* red60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red60x60.png; sourceTree = SOURCE_ROOT; };
+		30F5800F186FE6E200C036A7 /* highscorebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = highscorebackground.png; path = Images/highscorebackground.png; sourceTree = SOURCE_ROOT; };
+		30F580111870040900C036A7 /* SliderNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderNextViewController.h; sourceTree = "<group>"; };
+		30F580121870040900C036A7 /* SliderNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderNextViewController.m; sourceTree = "<group>"; };
+		30F580141870048300C036A7 /* SliderNextHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderNextHelpViewController.h; sourceTree = "<group>"; };
+		30F580151870048300C036A7 /* SliderNextHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderNextHelpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +204,10 @@
 				300B1C5917F7E53F004AB715 /* Board.m */,
 				300B1C1F17F68298004AB715 /* SliderAppDelegate.m */,
 				300B1C2717F68298004AB715 /* MainStoryboard_iPhone.storyboard */,
+				30F580111870040900C036A7 /* SliderNextViewController.h */,
+				30F580121870040900C036A7 /* SliderNextViewController.m */,
+				30F580141870048300C036A7 /* SliderNextHelpViewController.h */,
+				30F580151870048300C036A7 /* SliderNextHelpViewController.m */,
 				300B1C2A17F68298004AB715 /* MainStoryboard_iPad.storyboard */,
 				30B330611825E5B000E727B6 /* MenuViewController.h */,
 				30B330621825E5B000E727B6 /* MenuViewController.m */,
@@ -198,6 +217,10 @@
 				300B1C2E17F68298004AB715 /* SliderViewController.m */,
 				300B5A0518431BBC004A1EE7 /* SliderHelpViewController.h */,
 				300B5A0618431BBC004A1EE7 /* SliderHelpViewController.m */,
+				3026F5D0186AACD50003452C /* SliderPlusHelpViewController.h */,
+				3026F5D1186AACD50003452C /* SliderPlusHelpViewController.m */,
+				3026F5D3186BCF000003452C /* sliderplushelp1.png */,
+				3026F5D4186BCF000003452C /* sliderplushelp2.png */,
 				300B1C1617F68298004AB715 /* Supporting Files */,
 			);
 			path = Slider;
@@ -257,10 +280,11 @@
 				301F32DA1862D74100AEF08C /* sliderhelp3.png */,
 				301F32DB1862D74100AEF08C /* sliderhelp4.png */,
 				301F32DC1862D74100AEF08C /* sliderhelp5.png */,
-				301F32DD1862D74100AEF08C /* sliderhelp6.png */,
 				301F32DE1862D74100AEF08C /* tile_1.png */,
 				301F32DF1862D74100AEF08C /* tile_2.png */,
+				30F5800F186FE6E200C036A7 /* highscorebackground.png */,
 				301F32E01862D74100AEF08C /* tile_3.png */,
+				3026F5CB186959010003452C /* sliderhelptextbackground.png */,
 			);
 			path = Images;
 			sourceTree = SOURCE_ROOT;
@@ -340,10 +364,10 @@
 				301F32E51862D74100AEF08C /* back4_s.png in Resources */,
 				301F32ED1862D74100AEF08C /* sliderhelp4.png in Resources */,
 				303576C8184B217200AD9828 /* white280x100.png in Resources */,
-				301F32EF1862D74100AEF08C /* sliderhelp6.png in Resources */,
 				301F32EA1862D74100AEF08C /* sliderhelp1.png in Resources */,
 				300B1C1A17F68298004AB715 /* InfoPlist.strings in Resources */,
 				301F32EC1862D74100AEF08C /* sliderhelp3.png in Resources */,
+				30F58010186FE6E200C036A7 /* highscorebackground.png in Resources */,
 				301F32E31862D74100AEF08C /* back2_s.png in Resources */,
 				301F32E71862D74100AEF08C /* forward.png in Resources */,
 				301F32E81862D74100AEF08C /* help.png in Resources */,
@@ -351,6 +375,7 @@
 				301F32F01862D74100AEF08C /* tile_1.png in Resources */,
 				30E9E7A7183891C3009E9B74 /* red60x60.png in Resources */,
 				303576C6184B0ACF00AD9828 /* white60x60.png in Resources */,
+				3026F5D5186BCF000003452C /* sliderplushelp1.png in Resources */,
 				300B1C2217F68298004AB715 /* Default.png in Resources */,
 				300B1C2417F68298004AB715 /* Default@2x.png in Resources */,
 				301F32E41862D74100AEF08C /* back3_s.png in Resources */,
@@ -361,11 +386,13 @@
 				301F32EE1862D74100AEF08C /* sliderhelp5.png in Resources */,
 				30B390FF181F96780049E370 /* blue60x60.png in Resources */,
 				300B1C2917F68298004AB715 /* MainStoryboard_iPhone.storyboard in Resources */,
+				3026F5CC186959010003452C /* sliderhelptextbackground.png in Resources */,
 				300B1C2C17F68298004AB715 /* MainStoryboard_iPad.storyboard in Resources */,
 				301F32E11862D74100AEF08C /* back.png in Resources */,
 				300B1C5417F6B5ED004AB715 /* Default-568h@2x.png in Resources */,
 				309F9D07181FAC6900FFDBAA /* grey72x43.png in Resources */,
 				301F32E91862D74100AEF08C /* reset.png in Resources */,
+				3026F5D6186BCF000003452C /* sliderplushelp2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,13 +427,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F580131870040900C036A7 /* SliderNextViewController.m in Sources */,
 				300B5A0718431BBC004A1EE7 /* SliderHelpViewController.m in Sources */,
 				300B1C1C17F68298004AB715 /* main.m in Sources */,
 				30B330631825E5B000E727B6 /* MenuViewController.m in Sources */,
+				3026F5D2186AACD50003452C /* SliderPlusHelpViewController.m in Sources */,
 				300B1C2017F68298004AB715 /* SliderAppDelegate.m in Sources */,
 				300B1C2F17F68298004AB715 /* SliderViewController.m in Sources */,
 				300B1C5717F7DE2D004AB715 /* Tile.m in Sources */,
 				30E9E7A518387F2C009E9B74 /* SliderPlusViewController.m in Sources */,
+				30F580161870048300C036A7 /* SliderNextHelpViewController.m in Sources */,
 				300B1C5A17F7E53F004AB715 /* Board.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +561,7 @@
 				INFOPLIST_FILE = "Slider/Slider-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -543,6 +574,7 @@
 				INFOPLIST_FILE = "Slider/Slider-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

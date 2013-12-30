@@ -141,6 +141,20 @@
     return validMove;
 }
 
+- (BOOL) moveSliderNext:(NSString *) tile {
+    BOOL validMove = false;
+    
+    //if ( [tile isEqualToString: self.current[self.block_one]] || [tile isEqualToString: self.current[self.block_two]]) {
+    //} else {
+        validMove = [self moveSliderBasic:tile];
+    //}
+    //if(validMove == true) {
+       [self getBlocks];
+    //}
+    return validMove;
+}
+
+
 
 + (NSArray *) validValues {
     static NSArray *validValues = nil;
@@ -246,7 +260,77 @@
     }
 
 }
--(id)initWithName:(bool) transport
+
+-(void) getBlocks
+{
+    self.block_one = arc4random() % 16;
+    self.block_two = arc4random() % 16;
+    self.block_one = 2;
+    self.block_two = 5;
+    
+    while (self.current[self.block_one] == [Board validValues][0]) {
+        self.block_one = arc4random() % 16;
+    }
+    
+    bool solvable = false;
+    
+    while (!solvable) {
+        solvable = true;
+        
+        if (self.block_one == 2 && self.block_two == 5   && self.current[1] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+        if (self.block_one == 5 && self.block_two == 2 ){// && self.current[1] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+
+        if (self.block_one == 3 && self.block_two == 8 ){// && self.current[4] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+        if (self.block_one == 8 && self.block_two == 5 ){// && self.current[4] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+        
+        if (self.block_one == 9 && self.block_two == 14 ){// && self.current[13] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+        if (self.block_one == 14 && self.block_two == 9 ){// && self.current[13] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+
+        if (self.block_one == 12 && self.block_two == 15 ){// && self.current[16] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+        if (self.block_one == 15 && self.block_two == 12 ){// && self.current[16] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+
+
+        if ( self.current[self.block_one] == self.current[self.block_two]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+
+        if (self.current[self.block_two] == [Board validValues][0]) {
+            self.block_two = arc4random() % 16;
+            solvable = false;
+        }
+
+        
+    }
+    
+}
+
+
+-(id)initWithName:(bool) transport block:(bool)block
 {
     self = [super init];
     if (self) {
@@ -266,8 +350,26 @@
                 Tile *tile = self.getRandomTile;
                 [self.current addObject:[Board validValues][tile.value]];
             }
-
-            [self getTransports];
+            
+            if(!self.solvable) {
+                if(self.current[0] == [Board validValues][0] || self.current[1] == [Board validValues][0]) {
+                    NSString *temp = self.current[3];
+                    [self.current replaceObjectAtIndex:3 withObject:self.current[4]];
+                    [self.current replaceObjectAtIndex:4 withObject:temp];
+                } else {
+                    NSString *temp = self.current[0];
+                    [self.current replaceObjectAtIndex:0 withObject:self.current[1]];
+                    [self.current replaceObjectAtIndex:1 withObject:temp];
+                    
+                }
+            }
+            
+            if (transport == false || block == false) {
+                [self getTransports];
+                [self getBlocks];
+            } else {
+                
+            }
             
             for (int i=0; i<15; i++) {
                 if (self.current[i]==[Board validValues][i+1]) {

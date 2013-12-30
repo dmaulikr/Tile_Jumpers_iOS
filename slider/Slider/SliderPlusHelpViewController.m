@@ -1,14 +1,14 @@
 //
-//  SliderHelpViewController.m
+//  SliderPlusHelpViewController.m
 //  Slider
 //
-//  Created by Monte Jeu on 11/24/13.
+//  Created by Monte Christopher Jeu on 12/24/13.
 //  Copyright (c) 2013 Monte Jeu. All rights reserved.
 //
 
-#import "SliderHelpViewController.h"
+#import "SliderPlusHelpViewController.h"
 
-@interface SliderHelpViewController ()
+@interface SliderPlusHelpViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *textBackgroundImage;
 @property (strong,nonatomic) NSString *textBackgroundImageFile;
@@ -17,13 +17,10 @@
 
 @end
 
-@implementation SliderHelpViewController
+@implementation SliderPlusHelpViewController
 
 - (IBAction)hideHelpScreen:(id)sender {
     self.view.superview.hidden=true;
-    [self.textBackgroundImage setImage:nil];
-    [self.sliderhelpexitbutton setBackgroundImage:nil forState:UIControlStateNormal];
-    self.sliderHelpImages.animationImages=nil;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,21 +35,20 @@
 
 -(BOOL) loadImages {
     [self.textBackgroundImage setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"sliderhelptextbackground" ofType:@"png"]]];
-
-    NSArray *imageNames = @[@"sliderhelp1", @"sliderhelp2", @"sliderhelp3",
-                            @"sliderhelp4", @"sliderhelp5"];
-
+    
+    NSArray *imageNames = @[@"sliderplushelp1", @"sliderplushelp2"];
+    
     NSMutableArray *images = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < imageNames.count; i++) {
         [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:[imageNames objectAtIndex:i] ofType:@"png"]]];
     }
     self.sliderHelpImages.animationImages = images;
-    self.sliderHelpImages.animationDuration = 25;
+    self.sliderHelpImages.animationDuration = 5;
     [self.view addSubview:self.sliderHelpImages];
     [self.sliderHelpImages startAnimating];
     
-
+    
     [self.sliderhelpexitbutton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"exit" ofType:@"png"]] forState:UIControlStateNormal];
     [self.view bringSubviewToFront:self.sliderhelpexitbutton];
     

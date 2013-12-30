@@ -1,46 +1,48 @@
 //
-//  SliderPlusViewController.m
+//  SliderNextViewController.m
 //  Slider
 //
-//  Created by Monte Jeu on 11/16/13.
+//  Created by Monte Christopher Jeu on 12/28/13.
 //  Copyright (c) 2013 Monte Jeu. All rights reserved.
 //
 
-#import "SliderPlusViewController.h"
-#import "SliderPlusHelpViewController.h"
+#import "SliderNextViewController.h"
+#import "SliderNextHelpViewController.h"
 #import "Board.h"
 
-@interface SliderPlusViewController ()
+@interface SliderNextViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *tileButtons;
 @property (strong, nonatomic) IBOutlet UILabel *moves;
 @property (strong, nonatomic) IBOutlet UILabel *solved;
 @property (strong, nonatomic) IBOutlet UIView *sliderHelpView;
 @property (strong, nonatomic) Board *board;
-@property (strong, nonatomic) SliderPlusHelpViewController *sliderPlusHelpViewController;
+@property (strong, nonatomic) SliderNextHelpViewController *sliderNextHelpViewController;
 @property (nonatomic) NSTimeInterval startTime;
 @property (nonatomic) NSTimeInterval endTime;
-@property (strong, nonatomic) IBOutlet UIImageView *sliderPlusBackground;
-@property (strong, nonatomic) IBOutlet UIButton *sliderPlusBackButton;
-@property (strong, nonatomic) IBOutlet UIButton *sliderPlusResetButton;
-@property (weak, nonatomic) IBOutlet UIButton *sliderPlusHelpButton;
+@property (strong, nonatomic) IBOutlet UIImageView *sliderNextBackground;
+@property (strong, nonatomic) IBOutlet UIButton *sliderNextBackButton;
+@property (strong, nonatomic) IBOutlet UIButton *sliderNextResetButton;
+@property (weak, nonatomic) IBOutlet UIButton *sliderNextHelpButton;
 @property (weak, nonatomic) IBOutlet UILabel *highscoretext;
 @property (weak, nonatomic) IBOutlet UIImageView *highscorebackground;
 @property (nonatomic) NSInteger trans_one;
 @property (nonatomic) NSInteger trans_two;
+@property (nonatomic) NSInteger block_one;
+@property (nonatomic) NSInteger block_two;
 
 @end
 
-@implementation SliderPlusViewController
+@implementation SliderNextViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqual:@"sliderPlusHelpSegue"]) {
-        self.sliderPlusHelpViewController = [segue destinationViewController];
+    if ([segue.identifier isEqual:@"sliderNextHelpSegue"]) {
+        self.sliderNextHelpViewController = [segue destinationViewController];
     }
 }
 
 - (IBAction)showHelpScreen:(id)sender {
-    [self.sliderPlusHelpViewController loadImages];
+    [self.sliderNextHelpViewController loadImages];
     self.sliderHelpView.hidden = false;
 }
 
@@ -49,9 +51,9 @@
     int i = 0;
     for (UIButton *tileButton in self.tileButtons) {
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
-
-        if(self.board.transport_two == i || self.board.transport_one == i) {
-            [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_2" ofType:@"png"]] forState:UIControlStateNormal];
+        
+        if(self.board.block_two == i || self.board.block_one == i) {
+            [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_3" ofType:@"png"]] forState:UIControlStateNormal];
         } else {
             [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_1" ofType:@"png"]] forState:UIControlStateNormal];
         }
@@ -66,12 +68,12 @@
     if(self.board.solved == true)
         return;
     
-    if([self.board moveSliderPlus: sender.currentTitle]) {
+    if([self.board moveSliderNext: sender.currentTitle]) {
         NSInteger i=0;
         for (UIButton *tileButton in self.tileButtons) {
             [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
-            if(self.board.transport_two == i || self.board.transport_one == i) {
-                [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_2" ofType:@"png"]] forState:UIControlStateNormal];
+            if(self.board.block_two == i || self.board.block_one == i) {
+                [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_3" ofType:@"png"]] forState:UIControlStateNormal];
             } else {
                 [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_1" ofType:@"png"]] forState:UIControlStateNormal];
             }
@@ -83,12 +85,12 @@
 
 
 - (Board *) board {
-
+    
     if (!_board) {
-        _board = [[Board alloc]initWithName:true block:false];
+        _board = [[Board alloc]initWithName:false block:true];
         self.startTime = [NSDate timeIntervalSinceReferenceDate];
     }
-
+    
     return _board;
 }
 
@@ -98,9 +100,9 @@
     _tileButtons = tileButtons;
     for (UIButton *tileButton in tileButtons) {
         [tileButton setTitle:self.board.current[i] forState:UIControlStateNormal];
- 
-        if(self.board.transport_two == i || self.board.transport_one == i) {
-            [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_2" ofType:@"png"]] forState:UIControlStateNormal];
+        
+        if(self.board.block_two == i || self.board.block_one == i) {
+            [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_3" ofType:@"png"]] forState:UIControlStateNormal];
         } else {
             [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_1" ofType:@"png"]] forState:UIControlStateNormal];
         }
@@ -113,14 +115,14 @@
 - (void)viewDidLoad
 {
     [self updateLabels];
-    self.sliderPlusBackground.image=[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"back2_s" ofType:@"png"]];
-    [self.sliderPlusBackButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"back" ofType:@"png"]] forState:UIControlStateNormal];
-    [self.sliderPlusResetButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"reset" ofType:@"png"]] forState:UIControlStateNormal];
-    [self.sliderPlusHelpButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"help" ofType:@"png"]] forState:UIControlStateNormal];
+    self.sliderNextBackground.image=[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"back3_s" ofType:@"png"]];
+    [self.sliderNextBackButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"back" ofType:@"png"]] forState:UIControlStateNormal];
+    [self.sliderNextResetButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"reset" ofType:@"png"]] forState:UIControlStateNormal];
+    [self.sliderNextHelpButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"help" ofType:@"png"]] forState:UIControlStateNormal];
     int i = 0;
     for (UIButton *tileButton in self.tileButtons) {
-        if(self.board.transport_two == i || self.board.transport_one == i) {
-            [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_2" ofType:@"png"]] forState:UIControlStateNormal];
+        if(self.board.block_two == i || self.board.block_one == i) {
+            [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_3" ofType:@"png"]] forState:UIControlStateNormal];
         } else {
             [tileButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"tile_1" ofType:@"png"]] forState:UIControlStateNormal];
         }
@@ -129,9 +131,9 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
-        
-//    }
+    //    if ([[UIScreen mainScreen]bounds].size.height == 568.0) {
+    
+    //    }
     
 }
 
@@ -245,7 +247,7 @@
 	NSArray *path =
 	NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
-	return [[path objectAtIndex:0] stringByAppendingPathComponent:@"sliderplusbasic.plist"];
+	return [[path objectAtIndex:0] stringByAppendingPathComponent:@"slidernextbasic.plist"];
     
 }
 

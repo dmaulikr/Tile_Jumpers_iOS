@@ -10,6 +10,5 @@
 
 @interface SliderViewController : UIViewController
 
-
 @end
 

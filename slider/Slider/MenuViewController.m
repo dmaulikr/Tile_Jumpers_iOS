@@ -11,19 +11,18 @@
 @interface MenuViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *sliderButton;
 @property (strong, nonatomic) IBOutlet UIButton *sliderPlusButton;
-
 @end
 
 @implementation MenuViewController
 
+- (IBAction)button:(id)sender {
+    
+    
+}
 
 
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)unwindSegue
 {
-    UIViewController* sourceViewController = unwindSegue.sourceViewController;
-
-    [sourceViewController dismissViewControllerAnimated:NO completion:Nil];
-
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,8 +38,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.sliderButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"grey72x43" ofType:@"png"]] forState:UIControlStateNormal];
-    [self.sliderPlusButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"grey72x43" ofType:@"png"]] forState:UIControlStateNormal];
+    //[self.sliderButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"grey72x43" ofType:@"png"]] forState:UIControlStateNormal];
+    //[self.sliderPlusButton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"grey72x43" ofType:@"png"]] forState:UIControlStateNormal];
 
 }
 
