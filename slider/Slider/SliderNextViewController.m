@@ -225,13 +225,13 @@
             }
         }
         
-        self.highscoretext.text = [NSString stringWithFormat: @"Best times:\n   %@ seconds\n   %@ seconds\n   %@ seconds\nBest Moves:\n   %@ moves\n   %@ moves\n   %@ moves",
-                                   [values objectAtIndex:0],
-                                   [values objectAtIndex:1],
-                                   [values objectAtIndex:2],
+        self.highscoretext.text = [NSString stringWithFormat: @"Least turns:\n   %@ moves\n   %@ moves\n   %@ moves\nFastest Times:\n   %@ seconds\n   %@ seconds\n   %@ seconds",
                                    [values objectAtIndex:3],
                                    [values objectAtIndex:4],
-                                   [values objectAtIndex:5]];
+                                   [values objectAtIndex:5],
+                                   [values objectAtIndex:0],
+                                   [values objectAtIndex:1],
+                                   [values objectAtIndex:2]];
         self.highscorebackground.image=[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"highscorebackground" ofType:@"png"]];
         self.highscorebackground.hidden=false;
         self.highscoretext.hidden=false;

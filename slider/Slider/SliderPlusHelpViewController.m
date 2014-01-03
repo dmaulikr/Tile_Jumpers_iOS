@@ -36,7 +36,8 @@
 -(BOOL) loadImages {
     [self.textBackgroundImage setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"sliderhelptextbackground" ofType:@"png"]]];
     
-    NSArray *imageNames = @[@"sliderplushelp1", @"sliderplushelp2"];
+    NSArray *imageNames = @[@"sliderplushelp1", @"sliderplushelp2", @"sliderplushelp1", @"sliderplushelp2", @"sliderplushelp1", @"sliderplushelp2",
+                            @"sliderplushelp3", @"sliderplushelp4", @"sliderplushelp3", @"sliderplushelp4", @"sliderplushelp3", @"sliderplushelp4"];
     
     NSMutableArray *images = [[NSMutableArray alloc] init];
     
@@ -44,7 +45,7 @@
         [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:[imageNames objectAtIndex:i] ofType:@"png"]]];
     }
     self.sliderHelpImages.animationImages = images;
-    self.sliderHelpImages.animationDuration = 5;
+    self.sliderHelpImages.animationDuration = 20;
     [self.view addSubview:self.sliderHelpImages];
     [self.sliderHelpImages startAnimating];
     

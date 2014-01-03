@@ -36,21 +36,9 @@
 
 -(BOOL) loadImages {
     [self.textBackgroundImage setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"sliderhelptextbackground" ofType:@"png"]]];
-    
-    NSArray *imageNames = @[@"sliderhelp1", @"sliderhelp2", @"sliderhelp3",
-                            @"sliderhelp4", @"sliderhelp5"];
-    
-    NSMutableArray *images = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < imageNames.count; i++) {
-        [images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:[imageNames objectAtIndex:i] ofType:@"png"]]];
-    }
-    self.sliderHelpImages.animationImages = images;
-    self.sliderHelpImages.animationDuration = 25;
-    [self.view addSubview:self.sliderHelpImages];
-    [self.sliderHelpImages startAnimating];
-    
-    
+
+    [self.sliderHelpImages setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"slidernexthelp1" ofType:@"png"]]];
+
     [self.sliderhelpexitbutton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"exit" ofType:@"png"]] forState:UIControlStateNormal];
     [self.view bringSubviewToFront:self.sliderhelpexitbutton];
     
