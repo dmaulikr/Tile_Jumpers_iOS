@@ -279,25 +279,25 @@
         solvable = true;
 
         if(self.transport_one == -1) {
-            if ( (self.block_one == 2 && self.block_two == 5) || (self.block_one == 5 && self.block_two == 2 ) ) {
+            if ( (self.block_one == 1 && self.block_two == 4) || (self.block_one == 4 && self.block_two == 1 ) ) {
                 if (self.current[0] == [Board validValues][0]) {
                     solvable = false;
                 }
             }
             
-            if ( (self.block_one == 3 && self.block_two == 8 ) || (self.block_one == 8 && self.block_two == 3 ) ){
+            if ( (self.block_one == 2 && self.block_two == 7 ) || (self.block_one == 7 && self.block_two == 1 ) ){
                 if (self.current[3] == [Board validValues][0]) {
                     solvable = false;
                 }
             }
             
-            if ( (self.block_one == 9 && self.block_two == 14 ) || (self.block_one == 14 && self.block_two == 9 ) ){
+            if ( (self.block_one == 8 && self.block_two == 13 ) || (self.block_one == 13 && self.block_two == 8 ) ){
                 if (self.current[12] == [Board validValues][0]) {
                     solvable = false;
                 }
             }
             
-            if ( (self.block_one == 12 && self.block_two == 15 ) || (self.block_one == 15 && self.block_two == 12 ) ){
+            if ( (self.block_one == 11 && self.block_two == 14 ) || (self.block_one == 14 && self.block_two == 11 ) ){
                 if (self.current[15] == [Board validValues][0]) {
                     solvable = false;
                 }

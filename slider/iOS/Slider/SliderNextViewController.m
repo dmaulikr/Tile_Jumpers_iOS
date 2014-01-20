@@ -118,7 +118,7 @@
 - (void)viewDidLoad
 {
     self.highscorefile = @"slidernext.plist";
-    self.solvedfile = @"sliderbasicnext.plist";
+    self.solvedfile = @"slidernextsolved.plist";
     self.helpseenfile = @"slidernexthelp.plist";
 
     NSString *mydata = [self helpseenFilePath];
@@ -161,6 +161,9 @@
         NSMutableArray *values;
         NSString *mydata = [self solvedFilePath];
         BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:mydata];
+        values = [[NSMutableArray alloc] init];
+        [values addObject:[NSNumber numberWithInt:0]];
+        
         if (!fileExists) {
             [values writeToFile:[self solvedFilePath] atomically:YES];
         }

@@ -1882,16 +1882,16 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yog-xa-JDc">
-                                <rect key="frame" x="22" y="0.0" width="100" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yog-xa-JDc" userLabel="Basic">
+                                <rect key="frame" x="110" y="18" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="iyG-yP-o4p"/>
-                                    <constraint firstAttribute="height" constant="30" id="lD9-rC-j5M"/>
+                                    <constraint firstAttribute="height" constant="100" id="5Wp-GQ-ata"/>
+                                    <constraint firstAttribute="width" constant="100" id="UKg-tk-ikV"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Slider">
+                                <state key="normal" title="Basic">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1899,16 +1899,16 @@
                                     <segue destination="2" kind="modal" modalTransitionStyle="crossDissolve" animates="NO" id="X2e-7Q-AXT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byr-2A-cr6">
-                                <rect key="frame" x="22" y="38" width="100" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byr-2A-cr6" userLabel="Plus">
+                                <rect key="frame" x="110" y="126" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6cw-hh-4bV"/>
-                                    <constraint firstAttribute="width" constant="100" id="xjV-0I-2Z0"/>
+                                    <constraint firstAttribute="width" constant="100" id="WqO-bx-Ceu"/>
+                                    <constraint firstAttribute="height" constant="100" id="n0B-8M-h19"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Slider +">
+                                <state key="normal" title="Plus">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1916,16 +1916,16 @@
                                     <segue destination="AaJ-Ve-xjK" kind="modal" modalTransitionStyle="crossDissolve" animates="NO" id="LaR-xn-bbt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di1-Zq-6hr">
-                                <rect key="frame" x="20" y="76" width="100" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di1-Zq-6hr" userLabel="Next">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Lxw-C8-rZn"/>
-                                    <constraint firstAttribute="width" constant="100" id="yV0-b3-B3a"/>
+                                    <constraint firstAttribute="height" constant="100" id="8PH-aO-Wyi"/>
+                                    <constraint firstAttribute="width" constant="100" id="oJR-Tc-TbF"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Slider Next">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1933,16 +1933,16 @@
                                     <segue destination="Qr3-Ip-n7w" kind="modal" identifier="" modalTransitionStyle="crossDissolve" animates="NO" id="8Gz-1v-PeS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-mV-73Z">
-                                <rect key="frame" x="20" y="114" width="100" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTJ-mV-73Z" userLabel="Final">
+                                <rect key="frame" x="110" y="342" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CLf-hi-x6b"/>
-                                    <constraint firstAttribute="width" constant="100" id="IeW-00-PXy"/>
+                                    <constraint firstAttribute="width" constant="100" id="4qa-Ye-FV2"/>
+                                    <constraint firstAttribute="height" constant="100" id="ySd-6r-pYx"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Slider Final">
+                                <state key="normal" title="Final">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1951,26 +1951,27 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yog-xa-JDc" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="22" id="04x-Og-tOB"/>
-                            <constraint firstAttribute="trailing" secondItem="di1-Zq-6hr" secondAttribute="trailing" constant="200" id="7n4-Ns-3H0"/>
-                            <constraint firstItem="Byr-2A-cr6" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="22" id="A4v-TG-dZp"/>
-                            <constraint firstAttribute="trailing" secondItem="Byr-2A-cr6" secondAttribute="trailing" constant="198" id="CnB-kA-wpL"/>
-                            <constraint firstItem="CTJ-mV-73Z" firstAttribute="leading" secondItem="di1-Zq-6hr" secondAttribute="leading" id="GfN-xs-VSb"/>
-                            <constraint firstItem="di1-Zq-6hr" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="20" id="KwA-6U-H9P"/>
-                            <constraint firstItem="Byr-2A-cr6" firstAttribute="top" secondItem="yog-xa-JDc" secondAttribute="bottom" constant="8" id="Psq-Qg-OI9"/>
-                            <constraint firstItem="yog-xa-JDc" firstAttribute="top" secondItem="isC-ir-lx1" secondAttribute="bottom" id="UTE-2d-hLJ"/>
-                            <constraint firstItem="caw-Kd-7Du" firstAttribute="top" secondItem="CTJ-mV-73Z" secondAttribute="bottom" constant="316" id="WgC-LT-Nph"/>
-                            <constraint firstAttribute="trailing" secondItem="yog-xa-JDc" secondAttribute="trailing" constant="198" id="cF7-9m-wFD"/>
-                            <constraint firstItem="CTJ-mV-73Z" firstAttribute="trailing" secondItem="di1-Zq-6hr" secondAttribute="trailing" id="e4T-0M-beJ"/>
-                            <constraint firstItem="di1-Zq-6hr" firstAttribute="top" secondItem="Byr-2A-cr6" secondAttribute="bottom" constant="8" id="vki-9d-01M"/>
-                            <constraint firstItem="CTJ-mV-73Z" firstAttribute="top" secondItem="di1-Zq-6hr" secondAttribute="bottom" constant="8" symbolic="YES" id="y8N-Lw-w5O"/>
+                            <constraint firstItem="yog-xa-JDc" firstAttribute="top" secondItem="isC-ir-lx1" secondAttribute="bottom" constant="18" id="CxJ-qE-dcR"/>
+                            <constraint firstItem="CTJ-mV-73Z" firstAttribute="top" secondItem="di1-Zq-6hr" secondAttribute="bottom" constant="8" id="GCH-Cb-Arc"/>
+                            <constraint firstAttribute="trailing" secondItem="di1-Zq-6hr" secondAttribute="trailing" constant="110" id="NJI-60-pP6"/>
+                            <constraint firstItem="di1-Zq-6hr" firstAttribute="top" secondItem="Byr-2A-cr6" secondAttribute="bottom" constant="8" id="X3d-X6-LlA"/>
+                            <constraint firstAttribute="trailing" secondItem="CTJ-mV-73Z" secondAttribute="trailing" constant="110" id="atq-XO-f7J"/>
+                            <constraint firstItem="CTJ-mV-73Z" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="110" id="cla-Tu-XmN"/>
+                            <constraint firstItem="Byr-2A-cr6" firstAttribute="top" secondItem="yog-xa-JDc" secondAttribute="bottom" constant="8" id="hr8-9l-Qnm"/>
+                            <constraint firstAttribute="trailing" secondItem="yog-xa-JDc" secondAttribute="trailing" constant="110" id="jRo-CH-l3F"/>
+                            <constraint firstItem="di1-Zq-6hr" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="110" id="ju3-dD-l9N"/>
+                            <constraint firstItem="yog-xa-JDc" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="110" id="rFV-o8-o2W"/>
+                            <constraint firstAttribute="trailing" secondItem="Byr-2A-cr6" secondAttribute="trailing" constant="110" id="tic-GH-1Iz"/>
+                            <constraint firstItem="Byr-2A-cr6" firstAttribute="leading" secondItem="q6n-bX-zPg" secondAttribute="leading" constant="110" id="v98-xD-XMA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eWD-g3-11N"/>
                     <connections>
                         <outlet property="sliderButton" destination="yog-xa-JDc" id="zgt-3Z-PAr"/>
+                        <outlet property="sliderFinalButton" destination="CTJ-mV-73Z" id="bp7-1i-hfz"/>
+                        <outlet property="sliderNextButton" destination="di1-Zq-6hr" id="4h1-bV-Ssq"/>
                         <outlet property="sliderPlusButton" destination="Byr-2A-cr6" id="9ZH-JZ-jah"/>
                     </connections>
                 </viewController>
