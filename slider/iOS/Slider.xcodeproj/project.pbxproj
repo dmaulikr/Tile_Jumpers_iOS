@@ -432,6 +432,11 @@
 				CLASSPREFIX = Slider;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Monte Jeu";
+				TargetAttributes = {
+					300B1C0B17F68297004AB715 = {
+						DevelopmentTeam = AB7PNYPA52;
+					};
+				};
 			};
 			buildConfigurationList = 300B1C0717F68297004AB715 /* Build configuration list for PBXProject "Slider" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -676,11 +681,14 @@
 		300B1C4817F68298004AB715 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slider/Slider-Prefix.pch";
 				INFOPLIST_FILE = "Slider/Slider-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -689,11 +697,14 @@
 		300B1C4917F68298004AB715 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slider/Slider-Prefix.pch";
 				INFOPLIST_FILE = "Slider/Slider-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
