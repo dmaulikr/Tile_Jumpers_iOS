@@ -25,10 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *sliderNextHelpButton;
 @property (weak, nonatomic) IBOutlet UILabel *highscoretext;
 @property (weak, nonatomic) IBOutlet UIImageView *highscorebackground;
-@property (nonatomic) NSInteger trans_one;
-@property (nonatomic) NSInteger trans_two;
-@property (nonatomic) NSInteger block_one;
-@property (nonatomic) NSInteger block_two;
 @property (strong, nonatomic) NSString *highscorefile;
 @property (strong, nonatomic) NSString *solvedfile;
 @property (strong, nonatomic) NSString *helpseenfile;
@@ -84,6 +80,8 @@
         }
         [self updateLabels];
     }
+    [self updateLabels];
+
 }
 
 

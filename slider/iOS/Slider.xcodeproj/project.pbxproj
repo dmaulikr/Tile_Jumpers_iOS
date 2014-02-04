@@ -72,6 +72,7 @@
 		30867B78188CFC2B009887B5 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 30867B77188CFC2B009887B5 /* Default-Landscape.png */; };
 		30867B7A188D12C9009887B5 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 30867B79188D12C9009887B5 /* locked.png */; };
 		30A547241884BAEF0073DD23 /* SliderFinalHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A547231884BAEF0073DD23 /* SliderFinalHelpViewController.m */; };
+		30AEAC7618A0DEF00065784E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30AEAC7518A0DEF00065784E /* Images.xcassets */; };
 		30B330631825E5B000E727B6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B330621825E5B000E727B6 /* MenuViewController.m */; };
 		30CA1CDE18866FDD00DB5350 /* sliderfinalhelp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CA1CDC18866FDD00DB5350 /* sliderfinalhelp1.png */; };
 		30CA1CDF18866FDD00DB5350 /* sliderfinalhelp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CA1CDD18866FDD00DB5350 /* sliderfinalhelp2.png */; };
@@ -172,6 +173,7 @@
 		30867B79188D12C9009887B5 /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
 		30A547221884BAEF0073DD23 /* SliderFinalHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderFinalHelpViewController.h; sourceTree = "<group>"; };
 		30A547231884BAEF0073DD23 /* SliderFinalHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderFinalHelpViewController.m; sourceTree = "<group>"; };
+		30AEAC7518A0DEF00065784E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30B330611825E5B000E727B6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		30B330621825E5B000E727B6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		30CA1CDC18866FDD00DB5350 /* sliderfinalhelp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderfinalhelp1.png; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				30F580151870048300C036A7 /* SliderNextHelpViewController.m */,
 				30A547221884BAEF0073DD23 /* SliderFinalHelpViewController.h */,
 				30A547231884BAEF0073DD23 /* SliderFinalHelpViewController.m */,
+				30AEAC7518A0DEF00065784E /* Images.xcassets */,
 				300B1C1617F68298004AB715 /* Supporting Files */,
 			);
 			path = Slider;
@@ -470,6 +473,7 @@
 				302CEA0E188CDAAC00D41ECB /* Icon-57@2x.png in Resources */,
 				302CEA2F188CE14D00D41ECB /* Default-Portrait@2x.png in Resources */,
 				302CEA31188CE1A700D41ECB /* Default-Portrait.png in Resources */,
+				30AEAC7618A0DEF00065784E /* Images.xcassets in Resources */,
 				301F32EA1862D74100AEF08C /* sliderhelp1.png in Resources */,
 				300B1C1A17F68298004AB715 /* InfoPlist.strings in Resources */,
 				301F32EC1862D74100AEF08C /* sliderhelp3.png in Resources */,
@@ -632,7 +636,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Monte Jeu (MF7QH9Q629)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -664,7 +668,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Monte Jeu (MF7QH9Q629)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -681,6 +685,8 @@
 		300B1C4817F68298004AB715 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -697,6 +703,8 @@
 		300B1C4917F68298004AB715 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

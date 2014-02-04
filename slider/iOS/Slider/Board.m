@@ -145,6 +145,8 @@
     
     if (!([tile isEqualToString: self.current[self.block_one]] || [tile isEqualToString: self.current[self.block_two]])) {
         validMove = [self moveSliderBasic:tile];
+    }
+    if(validMove == true) {
         [self getBlocks];
     }
     return validMove;
@@ -157,7 +159,6 @@
         validMove = [self moveSliderPlus:tile];
     }
     if(validMove == true) {
-        [self getTransports];
         [self getBlocks];
     }
     return validMove;
