@@ -16,7 +16,6 @@
 		300B1C2917F68298004AB715 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300B1C2717F68298004AB715 /* MainStoryboard_iPhone.storyboard */; };
 		300B1C2C17F68298004AB715 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300B1C2A17F68298004AB715 /* MainStoryboard_iPad.storyboard */; };
 		300B1C2F17F68298004AB715 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300B1C2E17F68298004AB715 /* SliderViewController.m */; };
-		300B1C3717F68298004AB715 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B1C3617F68298004AB715 /* SenTestingKit.framework */; };
 		300B1C3817F68298004AB715 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B1C0F17F68298004AB715 /* UIKit.framework */; };
 		300B1C3917F68298004AB715 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B1C1117F68298004AB715 /* Foundation.framework */; };
 		300B1C4117F68298004AB715 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 300B1C3F17F68298004AB715 /* InfoPlist.strings */; };
@@ -111,8 +110,7 @@
 		300B1C2B17F68298004AB715 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		300B1C2D17F68298004AB715 /* SliderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		300B1C2E17F68298004AB715 /* SliderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
-		300B1C3517F68298004AB715 /* SliderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SliderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		300B1C3617F68298004AB715 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		300B1C3517F68298004AB715 /* SliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		300B1C3E17F68298004AB715 /* SliderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SliderTests-Info.plist"; sourceTree = "<group>"; };
 		300B1C4017F68298004AB715 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		300B1C4217F68298004AB715 /* SliderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderTests.h; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				300B1C3717F68298004AB715 /* SenTestingKit.framework in Frameworks */,
 				300B1C3817F68298004AB715 /* UIKit.framework in Frameworks */,
 				300B1C3917F68298004AB715 /* Foundation.framework in Frameworks */,
 			);
@@ -232,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				300B1C0C17F68298004AB715 /* Slider.app */,
-				300B1C3517F68298004AB715 /* SliderTests.octest */,
+				300B1C3517F68298004AB715 /* SliderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,7 +240,6 @@
 				300B1C0F17F68298004AB715 /* UIKit.framework */,
 				300B1C1117F68298004AB715 /* Foundation.framework */,
 				300B1C1317F68298004AB715 /* CoreGraphics.framework */,
-				300B1C3617F68298004AB715 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -423,8 +419,8 @@
 			);
 			name = SliderTests;
 			productName = SliderTests;
-			productReference = 300B1C3517F68298004AB715 /* SliderTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 300B1C3517F68298004AB715 /* SliderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -433,6 +429,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Slider;
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Monte Jeu";
 				TargetAttributes = {
@@ -725,13 +722,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slider/Slider-Prefix.pch";
 				INFOPLIST_FILE = "SliderTests/SliderTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -742,13 +739,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slider/Slider-Prefix.pch";
 				INFOPLIST_FILE = "SliderTests/SliderTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

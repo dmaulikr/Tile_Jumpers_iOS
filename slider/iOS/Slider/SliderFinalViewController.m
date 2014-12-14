@@ -156,7 +156,7 @@
 }
 
 - (void) updateLabels {
-    self.moves.text = [NSString stringWithFormat: @"Moves: %d", self.board.moves];
+    self.moves.text = [NSString stringWithFormat: @"Moves: %ld", (long)self.board.moves];
     NSInteger solveTime;
     
     if ([self.board solved] == TRUE) {
@@ -178,7 +178,7 @@
         if (solveTime == 9999) {
             self.solved.text = @"Solved!";
         } else {
-            self.solved.text = [NSString stringWithFormat: @"Solved in %d seconds!", solveTime];
+            self.solved.text = [NSString stringWithFormat: @"Solved in %ld seconds!", (long)solveTime];
         }
         mydata = [self saveFilePath];
         
@@ -226,7 +226,7 @@
             num = [values objectAtIndex:i];
             if (time < [num intValue]) {
                 tempnum = [num intValue];
-                [values replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:time]];
+                [values replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:(int)time]];
                 time = tempnum;
                 if( newtime == -1) {
                     newtime = i;
@@ -243,7 +243,7 @@
             num = [values objectAtIndex:i];
             if (moves < [num intValue]) {
                 tempnum = [num intValue];
-                [values replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:moves]];
+                [values replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:(int)moves]];
                 moves = tempnum;
                 if( newmove == -1) {
                     newmove = i;

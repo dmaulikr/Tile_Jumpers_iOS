@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Monte Jeu. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface SliderTests : SenTestCase
+@interface SliderTests : XCTestCase
 
 @end
