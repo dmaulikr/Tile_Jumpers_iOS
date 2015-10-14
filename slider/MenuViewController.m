@@ -17,6 +17,11 @@
 
 @implementation MenuViewController
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SliderViewController *controller = (SliderViewController *)segue.destinationViewController;
+    controller.level = segue.identifier;
+}
+
 - (IBAction)button:(id)sender {
     
     

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SliderViewController.h"
 
 @interface MenuViewController : UIViewController
 

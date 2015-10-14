@@ -19,14 +19,26 @@
 @property (nonatomic) NSInteger moves;
 @property (nonatomic) NSInteger solvability;
 
+@property (nonatomic) NSString *background_image;
+@property (nonatomic) NSString *highscorefile;
+@property (nonatomic) NSString *solvedfile;
+@property (nonatomic) NSString *helpseenfile;
+@property (nonatomic) NSString *helpsegue;
+@property (nonatomic) NSString *helptextbackground;
+@property (nonatomic) NSMutableArray *helptextimages;
+@property (nonatomic) NSString *helptext;
+@property (nonatomic) NSInteger helptextfontsize;
+
 - (void) addTile:(Tile *)tile;
+- (BOOL) moveSlider:(NSString *) tile :(NSString *)level;
 - (BOOL) moveSliderBasic:(NSString *) tile;
 - (BOOL) moveSliderPlus:(NSString *) tile;
 - (BOOL) moveSliderNext:(NSString *) tile;
 - (BOOL) moveSliderFinal:(NSString *) tile;
 - (BOOL) solvable;
 - (BOOL) solved;
-- (id) initWithName:(bool)transport block:(bool) block;
+- (id) initWithName:(NSString *) level;
 + (NSArray *) validValues;
+- (NSString *) tileImage:(NSInteger) value;
 
 @end

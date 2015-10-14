@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>36101E38-1AD9-4D1D-8D7E-E88DEC531341</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Slider</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>91705F486AF0D5261A4FDDC7852A12340D9BB390</key>
 		<string>https://github.com/montejeu/omegapulse.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>slider/iOS/Slider.xcodeproj</string>
+	<string>slider/iOS/Slider.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>91705F486AF0D5261A4FDDC7852A12340D9BB390</key>

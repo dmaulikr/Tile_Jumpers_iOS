@@ -10,9 +10,40 @@
 
 @interface Board()
 @property (strong, nonatomic) NSMutableArray *tiles;
+//@property (nonatomic) BOOL pad;
 @end
 
 @implementation Board
+
+
+- (NSString *) tileImage:(NSInteger) value {
+    if (value == self.block_one) {
+        return @"tile_3";
+    }
+    if (value == self.block_two) {
+        return @"tile_3";
+    }
+    if (value == self.transport_one) {
+        return @"tile_2";
+    }
+    if (value == self.transport_two) {
+        return @"tile_2";
+    }
+    return @"tile_1";
+}
+
+- (BOOL) moveSlider:(NSString *)tile :(NSString *)level {
+    if ([level isEqualToString:@"Final"]) {
+        return[self moveSliderFinal:tile];
+    } else if ([level isEqualToString:@"Plus"]) {
+        return [self moveSliderPlus:tile];
+    } else if ([level isEqualToString:@"Next"]) {
+        return [self moveSliderNext:tile];
+    } else if ([level isEqualToString:@"Basic"]) {
+        return[self moveSliderBasic:tile];
+    }
+    return false;
+}
 
 - (BOOL) moveSliderBasic:(NSString *) tile {
     BOOL validMove = false;
@@ -27,81 +58,63 @@
             if (j == 1 || j == 4) {
                 validMove = true;
             }
-        }
-        else if (i == 1) {
+        } else if (i == 1) {
             if (j == 0 || j == 2 || j == 5) {
                 validMove = true;
             }
-        }
-        else if (i == 2) {
+        } else if (i == 2) {
             if (j == 1 || j == 3 || j == 6) {
                 validMove = true;
             }
-        }
-        else if (i == 3) {
+        } else if (i == 3) {
             if (j == 2 || j == 7) {
                 validMove = true;
             }
-        }
-        
-        else if (i == 4) {
+        } else if (i == 4) {
             if (j == 0 || j == 5 || j == 8) {
                 validMove = true;
             }
-        }
-        else if (i == 5) {
+        } else if (i == 5) {
             if (j == 1 || j == 4 || j == 6 || j == 9) {
                 validMove = true;
             }
-        }
-        else if (i == 6) {
+        } else if (i == 6) {
             if (j == 2 || j == 5 || j == 7 || j == 10) {
                 validMove = true;
             }
-        }
-        else if (i == 7) {
+        } else if (i == 7) {
             if (j == 3 || j == 6 || j == 11) {
                 validMove = true;
             }
-        }
-        
-        else if (i == 8) {
+        } else if (i == 8) {
             if (j == 4 || j == 9 || j == 12) {
                 validMove = true;
             }
-        }
-        else if (i == 9) {
+        } else if (i == 9) {
             if (j == 5 || j == 8 || j == 10 || j == 13) {
                 validMove = true;
             }
-        }
-        else if (i == 10) {
+        } else if (i == 10) {
             if (j == 6 || j == 9 || j == 11 || j == 14) {
                 validMove = true;
             }
-        }
-        else if (i == 11) {
+        } else if (i == 11) {
             if (j == 7 || j == 10 || j == 15) {
                 validMove = true;
             }
-        }
-        
-        else if (i == 12) {
+        } else if (i == 12) {
             if (j == 8 || j == 13) {
                 validMove = true;
             }
-        }
-        else if (i == 13) {
+        } else if (i == 13) {
             if (j == 9 || j == 12 || j == 14) {
                 validMove = true;
             }
-        }
-        else if (i == 14) {
+        } else if (i == 14) {
             if (j == 10 || j == 13 || j == 15) {
                 validMove = true;
             }
-        }
-        else if (i == 15) {
+        } else if (i == 15) {
             if (j == 11 || j == 14) {
                 validMove = true;
             }
@@ -113,7 +126,6 @@
         
         self.current[j] = self.current[i];
         self.current[i] = [Board validValues][0];
-        
     }
     return validMove;
 }
@@ -333,9 +345,170 @@
     
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        int MAX_SOLVIBILITY = 2;
+        self.solvability = MAX_SOLVIBILITY;
+        while (self.solvability >= MAX_SOLVIBILITY) {
+            self.solvability = 0;
+            
+            if(self) {
+                for ( int i=0; i < 16; i++) {
+                    Tile *tile = [[Tile alloc] init];
+                    tile.value = i;
+                    [self addTile:tile];
+                }
+            }
+            
+            for ( int i=0; i < 16; i++) {
+                Tile *tile = self.getRandomTile;
+                [self.current addObject:[Board validValues][tile.value]];
+            }
+            
+            if(!self.solvable) {
+                if(self.current[0] == [Board validValues][0] || self.current[1] == [Board validValues][0]) {
+                    NSString *temp = self.current[3];
+                    [self.current replaceObjectAtIndex:3 withObject:self.current[4]];
+                    [self.current replaceObjectAtIndex:4 withObject:temp];
+                } else {
+                    NSString *temp = self.current[0];
+                    [self.current replaceObjectAtIndex:0 withObject:self.current[1]];
+                    [self.current replaceObjectAtIndex:1 withObject:temp];
+                    
+                }
+            }
+            
+            for (int i=0; i<15; i++) {
+                if (self.current[i]==[Board validValues][i+1]) {
+                    self.solvability++;
+                }
+            }
+            
+            if (self.solvability >= MAX_SOLVIBILITY) {
+                [self.current removeAllObjects];
+                [self.tiles removeAllObjects];
+            }
+        }
+    }
+    self.moves = 0;
+    self.block_one = -1;
+    self.block_two = -1;
+    self.transport_one = -1;
+    self.transport_two = -1;
+    return self;
+}
 
--(id)initWithName:(bool) transport block:(bool)block
-{
+//        _board = [[Board alloc]initWithName:true block:true];
+
+-(id)initWithName:(NSString *) level {
+    bool transport;
+    bool block;
+    
+    self.helpsegue = @"sliderHelpSegue";
+    
+    /*
+    if ([level isEqualToString:@"FinalPad"]) {
+        self.pad = true;
+        self.helptextfontsize = 36;
+        level = @"Final";
+    } else if ([level isEqualToString:@"NextPad"]) {
+        self.pad = true;
+        self.helptextfontsize = 36;
+        level = @"Next";
+    } else if ([level isEqualToString:@"BasicPad"]) {
+        self.pad = true;
+        self.helptextfontsize = 36;
+        level = @"Basic";
+    } else if ([level isEqualToString:@"PlusPad"]) {
+        self.pad = true;
+        self.helptextfontsize = 36;
+        level = @"Plus";
+    } else if ([level isEqualToString:@"Final"]) {
+        self.pad = false;
+        self.helptextfontsize = 18;
+    } else if ([level isEqualToString:@"Next"]) {
+        self.pad = false;
+        self.helptextfontsize = 18;
+    } else if ([level isEqualToString:@"Plus"]) {
+        self.pad = false;
+        self.helptextfontsize = 18;
+    } else if ([level isEqualToString:@"Basic"]) {
+        self.pad = false;
+        self.helptextfontsize = 18;
+    }*/
+
+    if ([level isEqualToString:@"Final"]) {
+        self.background_image = @"back4_s";
+        self.highscorefile = @"sliderfinal.plist";
+        self.solvedfile = @"sliderfinalsolved.plist";
+        self.helpseenfile = @"sliderfinalhelp.plist";
+        self.helptextbackground = @"sliderhelptextbackground";
+        self.helptextimages = [[NSMutableArray alloc] init];
+        [self.helptextimages addObject:@"sliderfinalhelp1"];
+        [self.helptextimages addObject:@"sliderfinalhelp2"];
+        self.helptext = @"Brown tiles may block the next move and force red bordered tiles to be used!\n\nDouble the obstacles, double the fun!";
+        
+        transport = true;
+        block = true;
+    } else if ([level isEqualToString:@"Plus"]) {
+        self.background_image = @"back2_s";
+        self.highscorefile = @"sliderplus.plist";
+        self.solvedfile = @"sliderplussolved.plist";
+        self.helpseenfile = @"sliderplushelp.plist";
+        self.helptextbackground = @"sliderhelptextbackground";
+        self.helptextimages = [[NSMutableArray alloc] init];
+        [self.helptextimages addObject:@"sliderplushelp1"];
+        [self.helptextimages addObject:@"sliderplushelp2"];
+        [self.helptextimages addObject:@"sliderplushelp1"];
+        [self.helptextimages addObject:@"sliderplushelp2"];
+        [self.helptextimages addObject:@"sliderplushelp1"];
+        [self.helptextimages addObject:@"sliderplushelp2"];
+        [self.helptextimages addObject:@"sliderplushelp3"];
+        [self.helptextimages addObject:@"sliderplushelp4"];
+        [self.helptextimages addObject:@"sliderplushelp3"];
+        [self.helptextimages addObject:@"sliderplushelp4"];
+        [self.helptextimages addObject:@"sliderplushelp3"];
+        [self.helptextimages addObject:@"sliderplushelp4"];
+        self.helptext = @"It may be neccessary to swap red bordered tiles to solve the board.\n\nAvoid touching the red bordered tiles on accident!";
+        
+            transport = true;
+            block = false;
+    } else if ([level isEqualToString:@"Next"]) {
+        self.background_image = @"back3_s";
+        self.highscorefile = @"slidernext.plist";
+        self.solvedfile = @"slidernextsolved.plist";
+        self.helpseenfile = @"slidernexthelp.plist";
+        self.helptextbackground = @"sliderhelptextbackground";
+        self.helptextimages = [[NSMutableArray alloc] init];
+        [self.helptextimages addObject:@"slidernexthelp1"];
+        self.helptext = @"Just like red bordered tiles, brown tiles may cause extra moves and extra time to solve the puzzle.\n\nFind another path to move!";
+        
+        transport = false;
+        block = true;
+    } else if ([level isEqualToString:@"Basic"]) {
+        self.background_image = @"back1_s";
+        self.highscorefile = @"sliderbasic.plist";
+        self.solvedfile = @"sliderbasicsolved.plist";
+        self.helpseenfile = @"sliderbasichelp.plist";
+        self.helptextbackground = @"sliderhelptextbackground";
+        self.helptextimages = [[NSMutableArray alloc] init];
+        [self.helptextimages addObject:@"sliderhelp1"];
+        [self.helptextimages addObject:@"sliderhelp2"];
+        [self.helptextimages addObject:@"sliderhelp1"];
+        [self.helptextimages addObject:@"sliderhelp2"];
+        [self.helptextimages addObject:@"sliderhelp1"];
+        [self.helptextimages addObject:@"sliderhelp2"];
+        [self.helptextimages addObject:@"sliderhelp3"];
+        [self.helptextimages addObject:@"sliderhelp4"];
+        [self.helptextimages addObject:@"sliderhelp3"];
+        [self.helptextimages addObject:@"sliderhelp4"];
+        self.helptext = @"Move the numbers so they are in ascending order and the empty tile is last.\n\n\n\nBeat the current high scores!";
+        
+        transport = false;
+        block = false;
+    }
+    
     self = [super init];
     self.block_one = -1;
     self.block_two = -1;
@@ -396,60 +569,6 @@
         }
     }
     self.moves = 0;
-    return self;
-}
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        int MAX_SOLVIBILITY = 2;
-        self.solvability = MAX_SOLVIBILITY;
-        while (self.solvability >= MAX_SOLVIBILITY) {
-            self.solvability = 0;
-            
-            if(self) {
-                for ( int i=0; i < 16; i++) {
-                    Tile *tile = [[Tile alloc] init];
-                    tile.value = i;
-                    [self addTile:tile];
-                }
-            }
-            
-            for ( int i=0; i < 16; i++) {
-                Tile *tile = self.getRandomTile;
-                [self.current addObject:[Board validValues][tile.value]];
-            }
-            
-            if(!self.solvable) {
-                if(self.current[0] == [Board validValues][0] || self.current[1] == [Board validValues][0]) {
-                    NSString *temp = self.current[3];
-                    [self.current replaceObjectAtIndex:3 withObject:self.current[4]];
-                    [self.current replaceObjectAtIndex:4 withObject:temp];
-                } else {
-                    NSString *temp = self.current[0];
-                    [self.current replaceObjectAtIndex:0 withObject:self.current[1]];
-                    [self.current replaceObjectAtIndex:1 withObject:temp];
-                    
-                }
-            }
-            
-            for (int i=0; i<15; i++) {
-                if (self.current[i]==[Board validValues][i+1]) {
-                    self.solvability++;
-                }
-            }
-            
-            if (self.solvability >= MAX_SOLVIBILITY) {
-                [self.current removeAllObjects];
-                [self.tiles removeAllObjects];
-            }
-        }
-    }
-    self.moves = 0;
-    self.block_one = -1;
-    self.block_two = -1;
-    self.transport_one = -1;
-    self.transport_two = -1;
     return self;
 }
 
