@@ -39,6 +39,8 @@
 - (BOOL) solved;
 - (id) initWithName:(NSString *) level;
 + (NSArray *) validValues;
++ (NSArray *) validMoves;
++ (NSDictionary *) invalidblock;
 - (NSString *) tileImage:(NSInteger) value;
 
 @end

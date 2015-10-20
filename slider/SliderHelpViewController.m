@@ -54,8 +54,10 @@
     [self.sliderhelpexitbutton setBackgroundImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"exit" ofType:@"png"]] forState:UIControlStateNormal];
     [self.view bringSubviewToFront:self.sliderhelpexitbutton];
     
+    self.helptext.selectable = YES;
     self.helptext.text = self.board.helptext;
-    [self.helptext setFont:[UIFont systemFontOfSize:self.board.helptextfontsize]];
+    self.helptext.selectable = NO;
+    
     return true;
 }
 

@@ -10,7 +10,6 @@
 
 @interface Board()
 @property (strong, nonatomic) NSMutableArray *tiles;
-//@property (nonatomic) BOOL pad;
 @end
 
 @implementation Board
@@ -54,70 +53,8 @@
         i = [self.current indexOfObject:tile];
         j = [self.current indexOfObject:[Board validValues][0]];
         
-        if (i == 0) {
-            if (j == 1 || j == 4) {
-                validMove = true;
-            }
-        } else if (i == 1) {
-            if (j == 0 || j == 2 || j == 5) {
-                validMove = true;
-            }
-        } else if (i == 2) {
-            if (j == 1 || j == 3 || j == 6) {
-                validMove = true;
-            }
-        } else if (i == 3) {
-            if (j == 2 || j == 7) {
-                validMove = true;
-            }
-        } else if (i == 4) {
-            if (j == 0 || j == 5 || j == 8) {
-                validMove = true;
-            }
-        } else if (i == 5) {
-            if (j == 1 || j == 4 || j == 6 || j == 9) {
-                validMove = true;
-            }
-        } else if (i == 6) {
-            if (j == 2 || j == 5 || j == 7 || j == 10) {
-                validMove = true;
-            }
-        } else if (i == 7) {
-            if (j == 3 || j == 6 || j == 11) {
-                validMove = true;
-            }
-        } else if (i == 8) {
-            if (j == 4 || j == 9 || j == 12) {
-                validMove = true;
-            }
-        } else if (i == 9) {
-            if (j == 5 || j == 8 || j == 10 || j == 13) {
-                validMove = true;
-            }
-        } else if (i == 10) {
-            if (j == 6 || j == 9 || j == 11 || j == 14) {
-                validMove = true;
-            }
-        } else if (i == 11) {
-            if (j == 7 || j == 10 || j == 15) {
-                validMove = true;
-            }
-        } else if (i == 12) {
-            if (j == 8 || j == 13) {
-                validMove = true;
-            }
-        } else if (i == 13) {
-            if (j == 9 || j == 12 || j == 14) {
-                validMove = true;
-            }
-        } else if (i == 14) {
-            if (j == 10 || j == 13 || j == 15) {
-                validMove = true;
-            }
-        } else if (i == 15) {
-            if (j == 11 || j == 14) {
-                validMove = true;
-            }
+        if ([[Board validMoves][i] containsObject:@(j) ]) {
+            validMove = true;
         }
     }
     
@@ -182,6 +119,29 @@
     if (!validValues)
         validValues = @[@"  ",@" 1",@" 2",@" 3",@" 4",@" 5",@" 6",@" 7",@" 8",@" 9",@"10",@"11",@"12",@"13",@"14",@"15"];
     return validValues;
+}
+
++ (NSArray *) validMoves {
+    static NSArray *validMoves = nil;
+    if(!validMoves)
+        validMoves = @[
+                       @[@1, @4],      @[@0, @2, @5],       @[@1, @3, @6],       @[@2, @7],
+                       @[@0, @5, @8],  @[@1, @4, @6, @9],   @[@2, @5, @7, @10],  @[@3, @6, @11],
+                       @[@4, @9, @12], @[@5, @8, @10, @13], @[@6, @9, @11, @14], @[@7, @10, @15],
+                       @[@8, @13],     @[@9, @12, @14],     @[@10, @13, @15],    @[@11, @14]
+                       ];
+    return validMoves;
+}
+
++ (NSDictionary *) invalidblock {
+    static NSDictionary *invalidblock = nil;
+    if(!invalidblock)
+        invalidblock = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSNumber numberWithInt:0], @[@1, @4],
+                        [NSNumber numberWithInt:3], @[@2, @7],
+                        [NSNumber numberWithInt:12], @[@8, @13],
+                        [NSNumber numberWithInt:15], @[@11, @14], nil];
+    return invalidblock;
 }
 
 - (NSMutableArray *) tiles {
@@ -286,58 +246,60 @@
     self.block_one = arc4random() % 16;
     self.block_two = arc4random() % 16;
 
-    bool solvable = false;
+    bool validboard = false;
     
-    while (!solvable) {
-        solvable = true;
+    while (!validboard) {
+        validboard = true;
 
+
+        
         if(self.transport_one == -1) {
             if ( (self.block_one == 1 && self.block_two == 4) || (self.block_one == 4 && self.block_two == 1 ) ) {
                 if (self.current[0] == [Board validValues][0]) {
-                    solvable = false;
+                    validboard = false;
                 }
             }
             
-            if ( (self.block_one == 2 && self.block_two == 7 ) || (self.block_one == 7 && self.block_two == 1 ) ){
+            if ( (self.block_one == 2 && self.block_two == 7 ) || (self.block_one == 7 && self.block_two == 2 ) ){
                 if (self.current[3] == [Board validValues][0]) {
-                    solvable = false;
+                    validboard = false;
                 }
             }
             
             if ( (self.block_one == 8 && self.block_two == 13 ) || (self.block_one == 13 && self.block_two == 8 ) ){
                 if (self.current[12] == [Board validValues][0]) {
-                    solvable = false;
+                    validboard = false;
                 }
             }
             
             if ( (self.block_one == 11 && self.block_two == 14 ) || (self.block_one == 14 && self.block_two == 11 ) ){
                 if (self.current[15] == [Board validValues][0]) {
-                    solvable = false;
+                    validboard = false;
                 }
             }
         }
 
         if(self.block_one == self.transport_one || self.block_one == self.transport_two) {
-            solvable = false;
+            validboard = false;
         }
         
         if(self.block_two == self.transport_one || self.block_two == self.transport_two) {
-            solvable = false;
+            validboard = false;
         }
         
         if(self.current[self.block_one] == self.current[self.block_two]) {
-            solvable = false;
+            validboard = false;
         }
         
         if(self.current[self.block_two] == [Board validValues][0]) {
-            solvable = false;
+            validboard = false;
         }
         
         if(self.current[self.block_one] == [Board validValues][0]) {
-            solvable = false;
+            validboard = false;
         }
 
-        if(solvable == false) {
+        if(validboard == false) {
             self.block_one = arc4random() % 16;
             self.block_two = arc4random() % 16;
         }
@@ -405,38 +367,8 @@
     bool transport;
     bool block;
     
-    self.helpsegue = @"sliderHelpSegue";
     
-    /*
-    if ([level isEqualToString:@"FinalPad"]) {
-        self.pad = true;
-        self.helptextfontsize = 36;
-        level = @"Final";
-    } else if ([level isEqualToString:@"NextPad"]) {
-        self.pad = true;
-        self.helptextfontsize = 36;
-        level = @"Next";
-    } else if ([level isEqualToString:@"BasicPad"]) {
-        self.pad = true;
-        self.helptextfontsize = 36;
-        level = @"Basic";
-    } else if ([level isEqualToString:@"PlusPad"]) {
-        self.pad = true;
-        self.helptextfontsize = 36;
-        level = @"Plus";
-    } else if ([level isEqualToString:@"Final"]) {
-        self.pad = false;
-        self.helptextfontsize = 18;
-    } else if ([level isEqualToString:@"Next"]) {
-        self.pad = false;
-        self.helptextfontsize = 18;
-    } else if ([level isEqualToString:@"Plus"]) {
-        self.pad = false;
-        self.helptextfontsize = 18;
-    } else if ([level isEqualToString:@"Basic"]) {
-        self.pad = false;
-        self.helptextfontsize = 18;
-    }*/
+    self.helpsegue = @"sliderHelpSegue";
 
     if ([level isEqualToString:@"Final"]) {
         self.background_image = @"back4_s";
@@ -503,7 +435,7 @@
         [self.helptextimages addObject:@"sliderhelp4"];
         [self.helptextimages addObject:@"sliderhelp3"];
         [self.helptextimages addObject:@"sliderhelp4"];
-        self.helptext = @"Move the numbers so they are in ascending order and the empty tile is last.\n\n\n\nBeat the current high scores!";
+        self.helptext = @"Move the numbers so they are in ascending order and the empty tile is last.\n\n\nBeat the current high scores!";
         
         transport = false;
         block = false;

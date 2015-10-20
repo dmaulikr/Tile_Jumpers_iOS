@@ -56,7 +56,7 @@
     }
 }
 
-- (IBAction)showHelpScreen:(id)sender {
+- (IBAction)showHelpScreen:(id)sender {    
     [self.sliderHelpViewController loadImages];
     self.sliderHelpView.hidden = false;
     if (self.board.solved == true) {
